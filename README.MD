@@ -2,15 +2,30 @@
 
 ## HowTo
 
-- Run it (quick steps):
-    1. Run Android emulator:  
+### Run app (quick steps)
 
-    ```bash  
-    ~/Library/Android/sdk/emulator/emulator -avd Pixel_2_API_28
-    ```
+#### List virtual devices and run android emulator  
 
-    2. Deploy application:
+osx:
 
-    ```bash
-    react-native run-android  
-    ```
+```bash  
+~/Library/Android/sdk/emulator/emulator -avd Pixel_2_API_28
+```
+
+linux:
+
+```bash
+~/Android/Sdk/emulator/emulator -list-avds
+~/Android/Sdk/emulator/emulator -avd <avd-of-your-choice>
+```
+
+#### Deploy application into AVD
+
+```bash
+cd <project-root>/ui
+react-native run-android  
+```
+
+### Debug
+
+Open *<http://localhost:8081/debugger-ui/>*

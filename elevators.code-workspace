@@ -15,6 +15,12 @@
 			"**/.project": true,
 			"**/.settings": true,
 			"**/.factorypath": true
+		},
+		"workspace.exclude": {
+			"**/.classpath": true,
+			"**/.project": true,
+			"**/.settings": true,
+			"**/.factorypath": true
 		}
 	}
 }
