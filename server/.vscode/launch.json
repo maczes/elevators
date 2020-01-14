@@ -1,0 +1,16 @@
+{
+    "configurations": [
+    
+        
+        {
+            "type": "java",
+            "name": "Spring Boot-ElevatorApplication<elevator>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.tingco.codechallenge.elevator.config.ElevatorApplication",
+            "projectName": "elevator",
+            "args": ""
+        }
+    ]
+}

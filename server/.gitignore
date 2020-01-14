@@ -1,0 +1,56 @@
+# intellij
+atlassian-ide-plugin.xml
+dependency-reduced-pom.xml
+rebel_project.xml
+*.iml
+*.project
+*.classpath
+.extract*
+.settings*
+
+# osx
+.DS_Store
+
+# misc
+*.py~
+*.swp
+*.pyc
+*~
+*#
+*.log
+**.idea/*
+**.metadata
+*.pmd
+*.idea
+*.eclipse
+*.checkstyle
+*.eclipse-pmd
+
+# maven
+target/
+
+*-result.html
+
+# nodejs
+node
+node_modules
+frontend-dest
+build/
+data/
+
+# STS 
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
