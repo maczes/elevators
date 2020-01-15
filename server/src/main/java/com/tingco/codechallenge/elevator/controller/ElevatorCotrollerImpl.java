@@ -18,8 +18,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ElevatorCotrollerImpl implements ElevatorController {
 
-    //private static final int ELEVATOR_RELEASED_ADDRESSED_FLOOR = -1;
-
     @Autowired
     ElevatorRepository elevatorRepository;
 
@@ -53,7 +51,6 @@ public class ElevatorCotrollerImpl implements ElevatorController {
         
         Elevator elevator = elevatorRepository.getElevator(elevatorId);
         elevator.setCurrentFloor(elevator.getAddressedFloor());
-        //elevator.setAddressedFloor(ELEVATOR_RELEASED_ADDRESSED_FLOOR);
         elevator.setBusy(false);
         elevator.setDirection(Elevator.Direction.NONE);
 

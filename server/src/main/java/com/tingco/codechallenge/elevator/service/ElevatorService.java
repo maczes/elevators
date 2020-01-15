@@ -2,12 +2,10 @@ package com.tingco.codechallenge.elevator.service;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import com.tingco.codechallenge.elevator.controller.api.Elevator;
-import com.tingco.codechallenge.elevator.model.ElevatorImpl;
 import com.tingco.codechallenge.elevator.repository.ElevatorRepository;
 import com.tingco.codechallenge.elevator.service.exceptions.ErrorCode;
 import com.tingco.codechallenge.elevator.service.exceptions.NoFreeElevatorAvailable;
@@ -38,7 +36,7 @@ public class ElevatorService {
             throw new NoFreeElevatorAvailable(ErrorCode.NO_FREE_ELEVATOR_AVAILABLE);
         } else {
             Elevator elevator = calculateClosestOne(toFloor, elevatorList);
-
+            log.debug("calculated nearest elevator id:{}", elevator.getId());
             return elevator;
         }
     }
