@@ -14,8 +14,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @SpringBootTest(classes = ElevatorApplication.class)
 public class ElevatorRepositoryTest {
 
-@Autowired
-ElevatorRepository elevatorRepository;
+    @Autowired
+    ElevatorRepository elevatorRepository;
 
     @Test
     public void checkInitialization() {

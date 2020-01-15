@@ -4,9 +4,12 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import com.tingco.codechallenge.elevator.api.Elevator;
-import com.tingco.codechallenge.elevator.api.ElevatorController;
+import com.tingco.codechallenge.elevator.controller.api.Elevator;
+import com.tingco.codechallenge.elevator.controller.api.ElevatorController;
+import com.tingco.codechallenge.elevator.repository.ElevatorRepository;
+import com.tingco.codechallenge.elevator.service.ElevatorService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import lombok.extern.slf4j.Slf4j;
@@ -15,10 +18,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ElevatorCotrollerImpl implements ElevatorController {
 
-    @PostConstruct
-    private void prepare() {
-        log.info("preparing elevators ....");
-    }
+    //private static final int ELEVATOR_RELEASED_ADDRESSED_FLOOR = -1;
+
+    @Autowired
+    ElevatorRepository elevatorRepository;
+
+    @Autowired
+    ElevatorService elevatorService;
 
     /**
      * @param toFloor Target floor number where elevator will be requested to go to
@@ -27,8 +33,8 @@ public class ElevatorCotrollerImpl implements ElevatorController {
      */
     @Override
     public Elevator requestElevator(final int toFloor) {
-        // TODO Auto-generated method stub
-        return null;
+
+        return elevatorService.getClosestFreeOne(toFloor);
     }
 
     /**
@@ -36,19 +42,38 @@ public class ElevatorCotrollerImpl implements ElevatorController {
      */
     @Override
     public List<Elevator> getElevators() {
-        // TODO Auto-generated method stub
-        return null;
+        log.debug("getting all elevators");
+
+        return elevatorRepository.getElevators();
     }
 
     @Override
-    public void releaseElevator(final Elevator elevator) {
-        // TODO Auto-generated method stub
+    public void releaseElevator(final int elevatorId) {
+        log.debug("releasing {}", elevatorId);
+        
+        Elevator elevator = elevatorRepository.getElevator(elevatorId);
+        elevator.setCurrentFloor(elevator.getAddressedFloor());
+        //elevator.setAddressedFloor(ELEVATOR_RELEASED_ADDRESSED_FLOOR);
+        elevator.setBusy(false);
+        elevator.setDirection(Elevator.Direction.NONE);
+
+        elevatorRepository.updateElevator(elevator);
     }
 
     @Override
-    public void moveElevator(final int toFloor) {
-        // TODO Auto-generated method stub
-        // 1. set it busy
+    public void moveElevator(final int toFloor, final int elevatorId) {
+        log.debug("moving {} to {}", elevatorId, toFloor);
+
+        Elevator elevator = elevatorRepository.getElevator(elevatorId);
+        elevator.setAddressedFloor(toFloor);
+        elevator.setBusy(true);
+        elevator.setDirection(calculateDirection(toFloor, elevator.getCurrentFloor()));
+
+        elevatorRepository.updateElevator(elevator);
+    }
+
+    private Elevator.Direction calculateDirection(final int toFloor, final int fromFloor) {
+        return toFloor > fromFloor? Elevator.Direction.UP : Elevator.Direction.DOWN;
     }
 
 }

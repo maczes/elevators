@@ -1,11 +1,9 @@
-package com.tingco.codechallenge.elevator.api;
+package com.tingco.codechallenge.elevator.controller.api;
 
 import java.util.List;
 
 /**
  * Interface for the Elevator Controller.
- *
- * @author Sven Wesley
  *
  */
 public interface ElevatorController {
@@ -28,15 +26,16 @@ public interface ElevatorController {
     /**
      * Telling the controller that the given elevator is free for new operations.
      *
-     * @param elevator the elevator that shall be released.
+     * @param elevatorId the elevator that shall be released.
      */
-    void releaseElevator(Elevator elevator);
+    void releaseElevator(int elevatorId);
 
     /**
      * Command to move the elevator to the given floor.
      *
      * @param toFloor int where to go.
+     * @param elevatorId which one elevator to move.
      */
-    void moveElevator(int toFloor);
+    void moveElevator(int toFloor, int elevatorId);
 
 }

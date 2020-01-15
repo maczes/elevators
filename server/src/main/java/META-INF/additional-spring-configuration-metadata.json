@@ -1,7 +1,12 @@
 {"properties": [
   {
-    "name": "elevator.numberofelevators",
+    "name": "elevator.number.of.elevators",
     "type": "java.lang.String",
-    "description": "A description for 'elevator.numberofelevators'"
+    "description": "Number of elevators in the building"
+  },
+  {
+    "name": "elevator.number.of.floors",
+    "type": "java.lang.String",
+    "description": "Number of floors in the building"
   }
 ]}

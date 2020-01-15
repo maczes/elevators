@@ -12,6 +12,9 @@ import lombok.Getter;
 @Getter
 public class ElevatorProperties {
     
-    @Value("${elevator.numberofelevators}")
+    @Value("${elevator.number.of.elevators}")
     private int numberOfElevators;
+        
+    @Value("${elevator.number.of.floors}")
+    private int numberOfFloors;
 }
