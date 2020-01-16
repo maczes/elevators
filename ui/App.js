@@ -1,24 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import FetchLocation from './components/FetchLocation';
+import ElevatorGrid from './components/ElevatorGrid';
+import ElevatorGrid2 from './components/ElevatorGrid2';
+//import FloorDropdown from './components/Dropdown';
+import Dropdown3 from './components/Dropdown3';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <FetchLocation onGetLocation={getUserLocationHandler} />
+      <Text>Elevator Simulator</Text>
+      <Text>----------------------</Text>
+      {/* <ElevatorGrid/> */}
+      <ElevatorGrid2/>
+      <Dropdown3/>
     </View>
   );
 }
-
-getUserLocationHandler = () => {
-  console.log("kiss my ass");
-  navigator.geolocation.getCurrentPosition(position => {
-    console.log(position);
-  }, err => {
-    console.err(err);
-  })
-};
 
 const styles = StyleSheet.create({
   container: {
