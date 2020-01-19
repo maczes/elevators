@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  Text, View} from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 
 import DropdownMenu from 'react-native-dropdown-menu';
 
@@ -7,39 +7,62 @@ export default class Dropdown3 extends Component {
 
   constructor(props) {
     super(props);
+    console.log(props.caption);
     this.state = {
       text: ''
     };
   }
-  
+
   render() {
-    var data = [["C", "Java", "JavaScript", "PHP"], ["Python", "Ruby"], ["Swift", "Objective-C"]];
+    // var data = [["0", "1", "2", "3", "4", "5", "6"], ["0", "1", "2", "3", "4", "5", "6"]];
+
+    var data = [["0", "1", "2", "3", "4", "5"]];
+
     return (
-      <View style={{flex: 1}}>
-        <View style={{height: 64}} />
+      <View style={styles.container}>
+
         <DropdownMenu
-          style={{flex: 1}}
-          bgColor={'white'}
+          style={styles.dropdown}
+          bgColor={'3654356'}
           tintColor={'#666666'}
           activityTintColor={'green'}
           // arrowImg={}      
           // checkImage={}   
-          // optionTextStyle={{color: '#333333'}}
-          // titleStyle={{color: '#333333'}} 
-          // maxHeight={300} 
-          handler={(selection, row) => this.setState({text: data[selection][row]})}
+          //optionTextStyle={{ color: '#333333' }}
+          titleStyle={{ color: '#333333' }}
+          maxHeight={95} 
+
+          handler={(selection, row) => this.setState({ text: data[selection][row] })}
           data={data}
         >
 
-          <View style={{flex: 1}}>
+          <View style={styles.label}>
             <Text>
-              {this.state.text} is the best language in the world
+               {this.props.caption}: {this.state.text} 
             </Text>
           </View>
-
+ 
         </DropdownMenu>
       </View>
     );
   }
-  
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  label: {
+    backgroundColor: '#fff',
+    alignItems: 'center',
+  },
+  dropdown: { 
+    flex: 1,
+    position: 'relative',
+    backgroundColor: '#090808',
+    //height: 299,
+  }
+});

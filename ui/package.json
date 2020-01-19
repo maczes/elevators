@@ -3,17 +3,22 @@
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "web-dev": "export ENVFILE=.env.dev && expo start --web",
+    "link-env-settings": "react-native link react-native-config"
   },
   "dependencies": {
     "expo": "^34.0.1",
     "react": "16.8.3",
     "react-dom": "^16.8.6",
     "react-native": "0.59.10",
+    "react-native-config": "^0.12.0",
     "react-native-drop-down-item": "^1.1.0",
     "react-native-dropdown-menu": "^2.0.0",
     "react-native-gesture-handler": "~1.3.0",
     "react-native-material-dropdown": "^0.11.1",
+    "react-native-modal": "^11.5.3",
+    "react-native-overlay": "^0.5.0",
     "react-native-reanimated": "~1.1.0",
     "react-native-screens": "1.0.0-alpha.22",
     "react-native-table-component": "^1.2.1",
