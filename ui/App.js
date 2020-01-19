@@ -1,15 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import ElevatorGrid from './components/ElevatorGrid';
-import ElevatorGrid2 from './components/ElevatorGrid2';
-import Dropdown3 from './components/Dropdown3';
-import ActionButton from './components/ActionButton';
-import MidGrid from './components/MidGrid'
+import ElevatorGrid from './src/components/ElevatorGrid';
+import MidGrid from './src/components/MidGrid'
+import InfoGrid from './src/components/InfoGrid'
 
 import Config from 'react-native-config'
 
 const Cfg = {
   NUMBER_OF_ELEVATORS: `${Config.NUMBER_OF_ELEVATORS || '4'}`,
+  MAIN_COLOR: `${Config.MAIN_COLOR || 'white'}`,
 };
 
 export default function App() {
@@ -20,24 +19,15 @@ export default function App() {
       <View style={styles.grid_container}>
         <Text>Elevator Simulator</Text>
         <Text>-------------------------</Text>
-        <Text>{Cfg.NUMBER_OF_ELEVATORS}</Text>
-        <ElevatorGrid2 />
+        <ElevatorGrid />
       </View >
 
-      <View style={styles.label}>
-        <Text>Pick up start and target floor below</Text>
+      <View style={stylesMidGrid.container}>
+        <MidGrid />
       </View>
 
-      {/* <View style={stylesMidGrid.container}>
-        <Dropdown3 caption="from floor:" />
-        <Dropdown3 caption="to floor:" />
-        <ActionButton />
-      </View> */} 
-
-      <MidGrid/>
-
       <View style={stylesDashboard.container}>
-        <Text>System Activity Dashboard</Text>
+        <InfoGrid />
       </View>
 
     </View>
@@ -48,8 +38,6 @@ const stylesDashboard = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    //backgroundColor: '#0000aa'
-    //height: '10%'
   }
 });
 
@@ -62,7 +50,7 @@ const stylesMidGrid = StyleSheet.create({
     textAlign: 'center',
     justifyContent: 'center',
     height: '10%',
-    maxHeight: '10%'
+    maxHeight: '10%',
   }
 });
 
@@ -71,15 +59,16 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 10,
     paddingBottom: 10,
-    backgroundColor: '#daed09'
+    backgroundColor: '#daed09',
   },
   grid_container: {
-    flex: 2,
-    backgroundColor: '#fff',
+    flex: 1,
+    backgroundColor: Cfg.MAIN_COLOR,
     alignItems: 'center',
     justifyContent: 'center',
     paddingBottom: 10,
     paddingTop: 10,
+    minHeight: '10%',
   },
   container: {
     flex: 1,
@@ -90,10 +79,15 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   label: {
-    //flex: 1,
     backgroundColor: '#fffddd',
     alignItems: 'center',
-    height: '3%'
+    height: '3%',
   }
 
 });
+
+
+/**
+ * colors:
+ * red: '#ff4534',
+ */

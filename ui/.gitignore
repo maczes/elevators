@@ -47,8 +47,7 @@ buck-out
 .idea
 .gradle
 local.properties
-*.iml
-/android/
+#/android/
 
 # Node
 node_modules
@@ -56,6 +55,7 @@ node_modules
 .nvm
 /bots/node_modules/
 package-lock.json
+*.lock
 
 # OS X
 .DS_Store
