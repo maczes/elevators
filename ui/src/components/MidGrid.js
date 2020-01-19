@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
-import Dropdown3 from '../components/Dropdown3';
-import ActionButton from '../components/ActionButton';
+import { View, StyleSheet, Button, Text } from 'react-native';
+import Dropdown from './Dropdown';
 import Modal from "react-native-modal";
 
 export default class MidGrid extends Component {
@@ -21,11 +20,12 @@ export default class MidGrid extends Component {
     render() {
         return (
             <View style={{ flex: 1 }}>
+                <Text style={stylesMidGrid.label}>Pick up start and target floor by clicking "Request Elevator"</Text>
                 <Button title="Request Elevator" onPress={this.toggleModal} />
                 <Modal isVisible={this.state.isModalVisible}>
                     <View style={stylesMidGrid.container}>
-                        <Dropdown3 caption="from floor:" />
-                        <Dropdown3 caption="to floor:" />
+                        <Dropdown caption="from floor:" />
+                        <Dropdown caption="to floor:" />
                         <Button title="Go" style={stylesMidGrid.btn} onPress={this.toggleModal} />
                     </View>
                 </Modal>
@@ -48,4 +48,8 @@ const stylesMidGrid = StyleSheet.create({
         textAlign: 'center',
         justifyContent: 'space-around', alignContent: 'center'
     },
+    label: {
+        alignItems: 'center',
+        textAlign: 'center',
+      }
 });

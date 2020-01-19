@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from 'react-native';
 
 import DropdownMenu from 'react-native-dropdown-menu';
 
-export default class Dropdown3 extends Component {
+class Dropdown extends Component {
 
   constructor(props) {
     super(props);
@@ -15,7 +15,6 @@ export default class Dropdown3 extends Component {
 
   render() {
     // var data = [["0", "1", "2", "3", "4", "5", "6"], ["0", "1", "2", "3", "4", "5", "6"]];
-
     var data = [["0", "1", "2", "3", "4", "5"]];
 
     return (
@@ -66,3 +65,6 @@ const styles = StyleSheet.create({
     //height: 299,
   }
 });
+
+
+export default Dropdown
