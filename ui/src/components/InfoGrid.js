@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { StyleSheet, Text, SafeAreaView, ScrollView, View } from 'react-native';
 import Constants from 'expo-constants';
 
-class InfoGrid extends Component {
+export default class InfoGrid extends React.Component  {
 
     constructor(props) {
         super(props);
-        console.log(props.caption);
         this.state = {
             text: ''
         };
@@ -49,5 +48,3 @@ const styles = StyleSheet.create({
     },
 });
 
-
-export default InfoGrid

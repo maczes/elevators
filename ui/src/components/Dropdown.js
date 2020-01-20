@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
 import DropdownMenu from 'react-native-dropdown-menu';
 
-class Dropdown extends Component {
+class Dropdown extends React.Component  {
 
   constructor(props) {
     super(props);

@@ -8,6 +8,7 @@
     "link-env-settings": "react-native link react-native-config"
   },
   "dependencies": {
+    "apisauce": "^1.1.1",
     "expo": "^34.0.1",
     "react": "16.8.3",
     "react-dom": "^16.8.6",
