@@ -1,32 +1,104 @@
-import React, { Component } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, Alert } from 'react-native';
+import React from 'react';
+import { StyleSheet, View, Text, ActivityIndicator } from 'react-native';
 import { Table, TableWrapper, Col, Cols, Cell } from 'react-native-table-component';
+import ApiClient from '../services/api-client';
+import AppConfig from '../config/app-config'
 
-class ElevatorGrid extends Component {
+
+export default class ElevatorGrid extends React.Component {
+
     constructor(props) {
         super(props);
 
-        const elementButton = (value) => (
+        this.colHeader = (value) => (
             <View style={styles.btn}>
                 <Text style={styles.headerText}>{value}</Text>
             </View>
         );
 
+        this.apiClient = ApiClient.create();
+
         this.state = {
-            rowTitle: ['0', '1', '2', '3', '4', '5', '6'].reverse(),
-            tableData: [
-                [elementButton('E1'), '', 'x', '', '', '', '', ''],
-                [elementButton('E2'), '', '', '', '', '', 'x', ''],
-                [elementButton('E3'), '', '', 'x', '', '', '', ''],
-                [elementButton('E4'), '', '', '', '', '', '', 'x'],
-                [elementButton('E5'), '', '', '', '', 'x', '', ''],
-                [elementButton('E6'), '', '', '', '', 'x', '', '']
-            ] //note: one tableData row is in fact column in app
+            isLoading: true,
+        }
+    }
+
+    async loadData() {
+        try {
+            console.log("listing elevators ");
+
+            const response = await this.apiClient.getElevators();
+
+            const elevators = response.data.map(c => {
+                return {
+                    id: c.id,
+                    currentFloor: c.currentFloor
+                };
+            });
+
+            const rowTitleArr = [];
+
+            for (i = 0; i <= AppConfig.NUMBER_OF_FLOORS; i++) {
+                rowTitleArr[i] = i.toString();
+            }
+
+            let tableDataArr = [Array(AppConfig.NUMBER_OF_ELEVATORS).keys()].map(x => {
+                const FLOOR_NUMBER_OFFSET = 2; //one row for header, and one for ground floor (level 0)
+                const FIXED_NUMBER_OF_FLOORS = AppConfig.NUMBER_OF_FLOORS + FLOOR_NUMBER_OFFSET;
+                const rows = [];
+                for (let key of x) {
+                    let row = Array(FIXED_NUMBER_OF_FLOORS)
+                        .fill('E' + (key + 1), 0, 1)
+                        .fill('', 1, FIXED_NUMBER_OF_FLOORS)
+
+                    e = elevators.filter(obj => obj.id === key);
+                    if (e) {
+                        e.map(z => {
+                            let fromIdx = parseInt(FIXED_NUMBER_OF_FLOORS - (z.currentFloor));
+                            let toIdx = parseInt(FIXED_NUMBER_OF_FLOORS - (z.currentFloor + 1))
+                            console.log("from: %d, to: %d", toIdx, fromIdx)
+                            row.fill('x', toIdx, fromIdx);
+                        });
+                        rows[key] = row;
+                    }
+                    else {
+                        rows[key] = Array(FIXED_NUMBER_OF_FLOORS)
+                            .fill('F' + key, 0, 1)
+                            .fill('', 1, FIXED_NUMBER_OF_FLOORS);
+                    }
+                }
+                return rows;
+            })[0];
+
+            console.info("elevator table: " + tableDataArr);
+            // create a new "State" object without mutating the original State object. 
+            const newState = Object.assign({}, this.state, {
+                isLoading: false,
+                dataSource: elevators,
+                rowTitle: rowTitleArr.reverse(),
+                tableData: tableDataArr,
+                //note: one tableData row is in fact column in app
+            });
+
+            this.setState(newState, function () { });
+        }
+        catch (error) {
+            console.error(error);
         }
     }
 
     render() {
-        const state = this.state;
+
+        if (this.state.isLoading) {
+            this.loadData();
+            console.info('reloading activity indicator');
+            return (
+                <View style={{ flex: 1, padding: 20 }}>
+                    <ActivityIndicator />
+                </View>
+            )
+        }
+
         return (
             <View style={styles.container}>
                 <Table style={{ flexDirection: 'row' }} borderStyle={{ borderWidth: 1 }}>
@@ -35,7 +107,7 @@ class ElevatorGrid extends Component {
                         <Cell data="" style={styles.singleHead} />
                         <TableWrapper style={{ flexDirection: 'row' }}>
                             <Col data={['F']} style={styles.head} textStyle={styles.text} />
-                            <Col data={state.rowTitle}
+                            <Col data={this.state.rowTitle}
                                 style={styles.title}
                                 heightArr={[30, 30, 30, 30, 30, 30, 30, 30]}
                                 textStyle={styles.titleText}></Col>
@@ -44,9 +116,9 @@ class ElevatorGrid extends Component {
 
                     {/* Right Wrapper */}
                     <TableWrapper style={styles.wrapperRight}>
-                        <Cols data={state.tableData} 
-                            heightArr={[40, 30, 30, 30, 30, 30, 30, 30]} 
-                            style={styles.title} 
+                        <Cols data={this.state.tableData}
+                            heightArr={[40, 30, 30, 30, 30, 30, 30, 30]}
+                            style={styles.title}
                             textStyle={styles.text} />
                     </TableWrapper>
                 </Table>
@@ -75,4 +147,41 @@ const styles = StyleSheet.create({
     wrapperRight: { flex: 1, flexDirection: 'column' }
 });
 
-export default ElevatorGrid
+/*
+async fetchElevators() {
+    try {
+        let requestUrl = "http://10.0.2.2:8080/elevator/api/v1/list";
+        console.log("listing elevators with " + requestUrl);
+
+        const response = await fetch(requestUrl);
+        const responseJson = await response.json();
+
+        const elevatorsState = responseJson.map(c => {
+            return {
+                id: c.id,
+                currentFloor: c.currentFloor
+            };
+        });
+
+        // create a new "State" object without mutating
+        // the original State object.
+        const newState = Object.assign({}, this.state, {
+            isLoading: false,
+            dataSource: elevatorsState,
+            rowTitle: ['0', '1', '2', '3', '4', '5', '6'].reverse(),
+            tableData: [
+                [this.colHeader('E1'), '', 'x', '', '', '', '', ''],
+                [this.colHeader('E2'), '', '', '', '', '', 'x', ''],
+                [this.colHeader('E3'), '', '', 'x', '', '', '', ''],
+                [this.colHeader('E4'), '', '', '', '', '', '', 'x'],
+                [this.colHeader('E5'), '', '', '', '', 'x', '', ''],
+                [this.colHeader('E6'), '', '', '', '', 'x', '', '']
+            ], //note: one tableData row is in fact column in app
+        });
+
+        this.setState(newState, function () { });
+    }
+    catch (error) {
+        console.error(error);
+    }
+} */

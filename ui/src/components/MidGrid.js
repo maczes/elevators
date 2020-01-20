@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, StyleSheet, Button, Text } from 'react-native';
 import Dropdown from './Dropdown';
 import Modal from "react-native-modal";
 
-export default class MidGrid extends Component {
+export default class MidGrid extends React.Component  {
 
     constructor(props) {
         super(props);
