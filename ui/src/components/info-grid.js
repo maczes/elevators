@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, SafeAreaView, ScrollView, View } from 'react-native';
-import Constants from 'expo-constants';
 
-export default class InfoGrid extends React.Component  {
+export default class InfoGrid extends React.Component {
 
     constructor(props) {
         super(props);
@@ -37,7 +36,6 @@ export default class InfoGrid extends React.Component  {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        //marginTop: Constants.statusBarHeight,
     },
     scrollView: {
         backgroundColor: 'white',

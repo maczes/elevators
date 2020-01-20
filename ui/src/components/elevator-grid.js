@@ -10,8 +10,22 @@ export default class ElevatorGrid extends React.Component {
     constructor(props) {
         super(props);
 
-        this.colHeader = (value) => (
-            <View style={styles.btn}>
+        const elevatorMark = "|";
+
+        this.colHeaderDecorator = (value) => (
+            <View style={styles.colHeader}>
+                <Text style={styles.headerText}>{value}</Text>
+            </View>
+        );
+
+        this.floorNumberDecorator = (value) => (
+            <View style={styles.rowHeader}>
+                <Text style={styles.headerText}>{value}</Text>
+            </View>
+        );
+
+        this.elevatorCellDecorator = (value) => (
+            <View style={styles.elevatorCell}>
                 <Text style={styles.headerText}>{value}</Text>
             </View>
         );
@@ -39,7 +53,7 @@ export default class ElevatorGrid extends React.Component {
             const rowTitleArr = [];
 
             for (i = 0; i <= AppConfig.NUMBER_OF_FLOORS; i++) {
-                rowTitleArr[i] = i.toString();
+                rowTitleArr[i] = this.floorNumberDecorator(i.toString());
             }
 
             let tableDataArr = [Array(AppConfig.NUMBER_OF_ELEVATORS).keys()].map(x => {
@@ -48,16 +62,16 @@ export default class ElevatorGrid extends React.Component {
                 const rows = [];
                 for (let key of x) {
                     let row = Array(FIXED_NUMBER_OF_FLOORS)
-                        .fill('E' + (key + 1), 0, 1)
+                        .fill(this.colHeaderDecorator('E' + (key + 1)), 0, 1)
                         .fill('', 1, FIXED_NUMBER_OF_FLOORS)
 
                     e = elevators.filter(obj => obj.id === key);
                     if (e) {
                         e.map(z => {
-                            let fromIdx = parseInt(FIXED_NUMBER_OF_FLOORS - (z.currentFloor));
-                            let toIdx = parseInt(FIXED_NUMBER_OF_FLOORS - (z.currentFloor + 1))
-                            console.log("from: %d, to: %d", toIdx, fromIdx)
-                            row.fill('x', toIdx, fromIdx);
+                            let toIdx = parseInt(FIXED_NUMBER_OF_FLOORS - (z.currentFloor));
+                            let fromIdx = parseInt(FIXED_NUMBER_OF_FLOORS - (z.currentFloor + 1))
+                            console.log("from: %d, to: %d", fromIdx, toIdx)
+                            row.fill(this.elevatorCellDecorator(this.elevatorMark), fromIdx, toIdx);
                         });
                         rows[key] = row;
                     }
@@ -141,11 +155,20 @@ const styles = StyleSheet.create({
     title: { flex: 1, backgroundColor: '#f6f8fa' },     //@ elevators IDs cell style; flex: 1 - this is cell division ratio  
     titleText: { marginRight: 0, textAlign: 'center' }, //@ elevators IDs cell text style;
     text: { textAlign: 'center' },
-    btn: { flex: 1, backgroundColor: '#c8e1ff', textAlign: 'center', paddingTop: 10 },
+    colHeader: { flex: 1, backgroundColor: '#c8e1ff', textAlign: 'center', paddingTop: 10 },
+    rowHeader: { flex: 1, backgroundColor: '#b4e8d7' },
+    elevatorCell: { flex: 1, backgroundColor: '#ffcccc', textAlign: 'center' },
     headerText: { textAlign: 'center' },
     wrapperLeft: { width: 60 },
     wrapperRight: { flex: 1, flexDirection: 'column' }
 });
+
+
+/**
+ * colors:
+ * red: '#ff4534',
+ */
+
 
 /*
 async fetchElevators() {

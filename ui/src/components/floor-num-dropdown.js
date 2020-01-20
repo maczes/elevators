@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from 'react-native';
 
 import DropdownMenu from 'react-native-dropdown-menu';
 
-class Dropdown extends React.Component  {
+export default class Dropdown extends React.Component {
 
   constructor(props) {
     super(props);
@@ -29,7 +29,7 @@ class Dropdown extends React.Component  {
           // checkImage={}   
           //optionTextStyle={{ color: '#333333' }}
           titleStyle={{ color: '#333333' }}
-          maxHeight={95} 
+          maxHeight={95}
 
           handler={(selection, row) => this.setState({ text: data[selection][row] })}
           data={data}
@@ -37,10 +37,10 @@ class Dropdown extends React.Component  {
 
           <View style={styles.label}>
             <Text>
-               {this.props.caption}: {this.state.text} 
+              {this.props.caption}: {this.state.text}
             </Text>
           </View>
- 
+
         </DropdownMenu>
       </View>
     );
@@ -58,13 +58,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
   },
-  dropdown: { 
+  dropdown: {
     flex: 1,
     position: 'relative',
     backgroundColor: '#090808',
     //height: 299,
   }
 });
-
-
-export default Dropdown

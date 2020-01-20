@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import ElevatorGrid from './ElevatorGrid';
-import MidGrid from './MidGrid';
-import InfoGrid from './InfoGrid';
+import ElevatorGrid from './elevator-grid';
+import MidGrid from './mid-grid';
+import InfoGrid from './info-grid';
 import FetchExample from './anteroom/FetchExample';
 
 export default class Main extends React.Component {
@@ -11,7 +11,7 @@ export default class Main extends React.Component {
         super(props);
         console.log(props);
         this.state = {
-           
+
         }
     }
 
@@ -93,8 +93,3 @@ const styles = StyleSheet.create({
 
 });
 
-
-/**
- * colors:
- * red: '#ff4534',
- */

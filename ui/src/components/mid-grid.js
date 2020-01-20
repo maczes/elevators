@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, StyleSheet, Button, Text } from 'react-native';
-import Dropdown from './Dropdown';
+import Dropdown from './floor-num-dropdown';
 import Modal from "react-native-modal";
 
-export default class MidGrid extends React.Component  {
+export default class MidGrid extends React.Component {
 
     constructor(props) {
         super(props);
@@ -11,6 +11,13 @@ export default class MidGrid extends React.Component  {
         this.state = {
             isModalVisible: false
         };
+    }
+
+    onGoButtonClicked = () => {
+        this.toggleModal();
+
+        // const { userId, dispatch } = this.props
+        // dispatch({ type: 'USER_FETCH_REQUESTED', payload: { userId } })
     }
 
     toggleModal = () => {
@@ -21,7 +28,7 @@ export default class MidGrid extends React.Component  {
         return (
             <View style={{ flex: 1 }}>
                 <Text style={stylesMidGrid.label}>Pick up start and target floor by clicking "Request Elevator"</Text>
-                <Button title="Request Elevator" onPress={this.toggleModal} />
+                <Button title="Request Elevator" onPress={this.onGoButtonClicked} />
                 <Modal isVisible={this.state.isModalVisible}>
                     <View style={stylesMidGrid.container}>
                         <Dropdown caption="from floor:" />
@@ -51,5 +58,5 @@ const stylesMidGrid = StyleSheet.create({
     label: {
         alignItems: 'center',
         textAlign: 'center',
-      }
+    }
 });
