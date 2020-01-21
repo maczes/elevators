@@ -7,10 +7,8 @@ export default class Dropdown extends React.Component {
 
   constructor(props) {
     super(props);
-    //console.debug(props);
 
-    // onFromFloorClick = props.onFromFloorClick;
-    // onToFloorClick = props.onToFloorClick;
+    props.loadDropdownData();
 
     this.state = {
       from: '',
@@ -19,7 +17,8 @@ export default class Dropdown extends React.Component {
   }
 
   render() {
-    var data = [["0", "1", "2", "3", "4", "5"], ["0", "1", "2", "3", "4", "5"]];
+
+    let data = this.props.data;
 
     return (
       <View style={styles.container}>
@@ -65,10 +64,10 @@ export default class Dropdown extends React.Component {
           <View style={styles.label}>
             <Text>
               {/* from floor: {this.state.from} */}
-              from floor: {this.props.floor}
+              from floor: {this.props.floorFrom}
             </Text>
             <Text>
-              to floor: {this.state.to}
+              to floor: {this.props.floorTo}
             </Text>
           </View>
 
@@ -80,8 +79,8 @@ export default class Dropdown extends React.Component {
 
 Dropdown.propTypes = {
   //caption: PropTypes.string.isRequired,
-  //onFromFloorClick: PropTypes.func.isRequired,
-  //onToFloorClick: PropTypes.func.isRequired,
+  onFromFloorClick: PropTypes.func.isRequired,
+  onToFloorClick: PropTypes.func.isRequired,
 }
 
 const styles = StyleSheet.create({
