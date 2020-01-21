@@ -2,13 +2,18 @@ import { connect } from 'react-redux';
 import Dropdown from '../components/floor-num-dropdown';
 
 //Actions
-import { getInitialFloorAction, getTargetFloorAction, loadDropdownDataAction } from '../actions/floor-num-dropdown-action';
+import {
+    loadDropdownDataAction,
+    getInitialFloorAction,
+    getTargetFloorAction,
+    resetComponentAction,
+} from '../actions/floor-num-dropdown-action';
 
 const mapStateToProps = (state) => {
+
     let newState = {
-        floorFrom: state.floorNumDropdownReducer ? state.floorNumDropdownReducer : 0,
-        floorTo: state.floorNumDropdownReducer ? state.floorNumDropdownReducer : 0,
-        data: state.floorNumDropdownDataReducer ? state.floorNumDropdownDataReducer : [["0"], ['0']],
+        request: state.floorNumDropdownReducer,
+        data: state.floorNumDropdownDataReducer ? state.floorNumDropdownDataReducer : [["?"], ['?']],
     };
 
     console.info(`foor-num-dropdown-reducer state  : ${JSON.stringify(newState)}`);
@@ -17,15 +22,19 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+
     return {
-        onFromFloorClick: (floor) => {
-            dispatch(getInitialFloorAction(floor));
-        },
-        onToFloorClick: (floor) => {
-            dispatch(getTargetFloorAction(floor));
-        },
         loadDropdownData: () => {
             dispatch(loadDropdownDataAction());
+        },
+        onFromFloorClick1: (request = { fromFloor, toFloor }) => {
+            dispatch(getInitialFloorAction(request));
+        },
+        onToFloorClick1: (request = { fromFloor, toFloor }) => {
+            dispatch(getTargetFloorAction(request));
+        },
+        resetComponent: () => {
+            dispatch(resetComponentAction());
         },
     };
 }

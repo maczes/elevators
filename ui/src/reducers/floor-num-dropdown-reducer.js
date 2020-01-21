@@ -1,36 +1,46 @@
-import { ON_INITIAL_FLOOR_HIT, ON_TARGET_FLOOR_HIT, LOAD_DROPDOWN_DATA } from "../actions/floor-num-dropdown-action";
-
-export function floorNumDropdownReducer(floor = 0, action) {
-    switch (action.type) {
-        case ON_INITIAL_FLOOR_HIT:
-            return action.floor;
-        case ON_TARGET_FLOOR_HIT:
-            return action.floor;
-        default:
-            return floor;
-    }
-}
+import {
+    ON_INITIAL_FLOOR_SELECT,
+    ON_TARGET_FLOOR_SELECT,
+    LOAD_DROPDOWN_DATA,
+    ON_FLOOR_NUM_DROPDOWN_RESET,
+} from "../actions/floor-num-dropdown-action";
+import AppConfig from '../config/app-config';
 
 export function floorNumDropdownDataReducer(data = [["0"], ["0"]], action) {
     switch (action.type) {
         case LOAD_DROPDOWN_DATA:
-            const dropdownData = [["0", "1", "2", "3", "4", "5"], ["0", "1", "2", "3", "4", "5"]];
+            const GROUND_FLOOR_OFFSET = 1;
+            const FIXED_NUMBER_OF_FLOORS = AppConfig.NUMBER_OF_FLOORS + GROUND_FLOOR_OFFSET;
+            const dropdownData = [
+                Array.from(Array(FIXED_NUMBER_OF_FLOORS), (d, i) => i),
+                Array.from(Array(FIXED_NUMBER_OF_FLOORS), (d, i) => i)
+            ];
             console.log("returning dropdown data: ", dropdownData);
+
             return dropdownData;
         default:
             return data;
     }
 }
 
-// export default function floorNumDropdownReducer(floors = { fromFloor: 0, toFloor: 0 }, action) {
-//     switch (action.type) {
-//         case ON_INITIAL_FLOOR_HIT:
-//             floors.fromFloor = action.floor;
-//             return floors;
-//         case ON_TARGET_FLOOR_HIT:
-//             floors.toFloor = action.floor;
-//             return floors;
-//         default:
-//             return floors;
-//     }
-// }
+export function floorNumDropdownReducer(request = { fromFloor: 0, toFloor: 0 }, action) {
+    switch (action.type) {
+        case ON_INITIAL_FLOOR_SELECT:
+            return request = {
+                fromFloor: action.request.fromFloor,
+                toFloor: request.toFloor,
+            };
+        case ON_TARGET_FLOOR_SELECT:
+            return request = {
+                fromFloor: request.fromFloor,
+                toFloor: action.request.toFloor,
+            };
+        case ON_FLOOR_NUM_DROPDOWN_RESET:
+            return request = {
+                fromFloor: 0,
+                toFloor: 0,
+            };
+        default:
+            return request;
+    }
+}

@@ -8,16 +8,11 @@ export default class Dropdown extends React.Component {
   constructor(props) {
     super(props);
 
+    props.resetComponent();
     props.loadDropdownData();
-
-    this.state = {
-      from: '',
-      to: '',
-    };
   }
 
   render() {
-
     let data = this.props.data;
 
     return (
@@ -30,45 +25,30 @@ export default class Dropdown extends React.Component {
           activityTintColor={'green'}
           titleStyle={{ color: '#333333' }}
           maxHeight={95}
+
           handler={(selection, row) => {
             if (selection === 0) {
-              this.props.onFromFloorClick(data[selection][row]);
+              this.props.onFromFloorClick1({
+                fromFloor: data[selection][row],
+                toFloor: this.props.floorTo
+              });
             } else if (selection === 1) {
-              this.props.onToFloorClick(data[selection][row]);
+              this.props.onToFloorClick1({
+                toFloor: data[selection][row],
+                fromFloor: this.props.fromFloor
+              });
             }
             else {
               console.error("can't assign selection: ", selection);
             }
           }}
 
-          // handler={(selection, row) => this.setState(() => {
-          //   if (selection === 0) {
-          //     return Object.assign({}, this.state, {
-          //       from: data[selection][row],
-          //       to: this.state.to,
-          //     });
-          //   } else if (selection === 1) {
-          //     return Object.assign({}, this.state, {
-          //       from: this.state.from,
-          //       to: data[selection][row],
-          //     });
-          //   } else {
-          //     console.error("can't assign selection: ", selection);
-          //   }
-          // }
-          //)}
-
           data={data}
         >
 
           <View style={styles.label}>
-            <Text>
-              {/* from floor: {this.state.from} */}
-              from floor: {this.props.floorFrom}
-            </Text>
-            <Text>
-              to floor: {this.props.floorTo}
-            </Text>
+            <Text>from floor: {this.props.request.fromFloor}</Text>
+            <Text>to floor: {this.props.request.toFloor}</Text>
           </View>
 
         </DropdownMenu>
@@ -78,9 +58,8 @@ export default class Dropdown extends React.Component {
 }
 
 Dropdown.propTypes = {
-  //caption: PropTypes.string.isRequired,
-  onFromFloorClick: PropTypes.func.isRequired,
-  onToFloorClick: PropTypes.func.isRequired,
+  loadDropdownData: PropTypes.func.isRequired,
+  resetComponent: PropTypes.func.isRequired,
 }
 
 const styles = StyleSheet.create({

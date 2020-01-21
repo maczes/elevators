@@ -70,3 +70,34 @@ https://redux-saga.js.org/
    transpose = a => a[0].map((x,i) => a.map(x => x[i]));
 
    //console.info(transpose(a));
+
+
+
+from dropdown:
+/*  handler={(selection, row) => {
+if (selection === 0) {
+  this.props.onFromFloorClick(data[selection][row]);
+} else if (selection === 1) {
+  this.props.onToFloorClick(data[selection][row]);
+}
+else {
+  console.error("can't assign selection: ", selection);
+}
+}} */
+
+// handler={(selection, row) => this.setState(() => {
+//   if (selection === 0) {
+//     return Object.assign({}, this.state, {
+//       from: data[selection][row],
+//       to: this.state.to,
+//     });
+//   } else if (selection === 1) {
+//     return Object.assign({}, this.state, {
+//       from: this.state.from,
+//       to: data[selection][row],
+//     });
+//   } else {
+//     console.error("can't assign selection: ", selection);
+//   }
+// }
+//)}

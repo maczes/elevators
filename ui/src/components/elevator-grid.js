@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, ActivityIndicator } from 'react-native';
 import { Table, TableWrapper, Col, Cols, Cell } from 'react-native-table-component';
 import ApiClient from '../services/api-client';
-import AppConfig from '../config/app-config'
+import AppConfig from '../config/app-config';
 
 
 export default class ElevatorGrid extends React.Component {
@@ -63,14 +63,13 @@ export default class ElevatorGrid extends React.Component {
                 for (let key of x) {
                     let row = Array(FIXED_NUMBER_OF_FLOORS)
                         .fill(this.colHeaderDecorator('E' + (key + 1)), 0, 1)
-                        .fill('', 1, FIXED_NUMBER_OF_FLOORS)
+                        .fill('', 1, FIXED_NUMBER_OF_FLOORS);
 
                     e = elevators.filter(obj => obj.id === key);
                     if (e) {
                         e.map(z => {
                             let toIdx = parseInt(FIXED_NUMBER_OF_FLOORS - (z.currentFloor));
-                            let fromIdx = parseInt(FIXED_NUMBER_OF_FLOORS - (z.currentFloor + 1))
-                            console.log("from: %d, to: %d", fromIdx, toIdx)
+                            let fromIdx = parseInt(FIXED_NUMBER_OF_FLOORS - (z.currentFloor + 1));
                             row.fill(this.elevatorCellDecorator(this.elevatorMark), fromIdx, toIdx);
                         });
                         rows[key] = row;
