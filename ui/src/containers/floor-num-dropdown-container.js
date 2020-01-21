@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import Dropdown from '../components/floor-num-dropdown';
 
-//Actions
 import {
     loadDropdownDataAction,
     getInitialFloorAction,

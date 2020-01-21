@@ -83,7 +83,6 @@ export default class ElevatorGrid extends React.Component {
                 return rows;
             })[0];
 
-            console.info("elevator table: " + tableDataArr);
             // create a new "State" object without mutating the original State object. 
             const newState = Object.assign({}, this.state, {
                 isLoading: false,
@@ -104,7 +103,7 @@ export default class ElevatorGrid extends React.Component {
 
         if (this.state.isLoading) {
             this.loadData();
-            console.info('reloading activity indicator');
+            console.info('loading activity indicator');
             return (
                 <View style={{ flex: 1, padding: 20 }}>
                     <ActivityIndicator />
@@ -161,49 +160,3 @@ const styles = StyleSheet.create({
     wrapperLeft: { width: 60 },
     wrapperRight: { flex: 1, flexDirection: 'column' }
 });
-
-
-/**
- * colors:
- * red: '#ff4534',
- */
-
-
-/*
-async fetchElevators() {
-    try {
-        let requestUrl = "http://10.0.2.2:8080/elevator/api/v1/list";
-        console.log("listing elevators with " + requestUrl);
-
-        const response = await fetch(requestUrl);
-        const responseJson = await response.json();
-
-        const elevatorsState = responseJson.map(c => {
-            return {
-                id: c.id,
-                currentFloor: c.currentFloor
-            };
-        });
-
-        // create a new "State" object without mutating
-        // the original State object.
-        const newState = Object.assign({}, this.state, {
-            isLoading: false,
-            dataSource: elevatorsState,
-            rowTitle: ['0', '1', '2', '3', '4', '5', '6'].reverse(),
-            tableData: [
-                [this.colHeader('E1'), '', 'x', '', '', '', '', ''],
-                [this.colHeader('E2'), '', '', '', '', '', 'x', ''],
-                [this.colHeader('E3'), '', '', 'x', '', '', '', ''],
-                [this.colHeader('E4'), '', '', '', '', '', '', 'x'],
-                [this.colHeader('E5'), '', '', '', '', 'x', '', ''],
-                [this.colHeader('E6'), '', '', '', '', 'x', '', '']
-            ], //note: one tableData row is in fact column in app
-        });
-
-        this.setState(newState, function () { });
-    }
-    catch (error) {
-        console.error(error);
-    }
-} */

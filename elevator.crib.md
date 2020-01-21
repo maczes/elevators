@@ -101,3 +101,50 @@ else {
 //   }
 // }
 //)}
+
+code clean up:
+
+/**
+ * colors:
+ * red: '#ff4534',
+ */
+
+
+/*
+async fetchElevators() {
+    try {
+        let requestUrl = "http://10.0.2.2:8080/elevator/api/v1/list";
+        console.log("listing elevators with " + requestUrl);
+
+        const response = await fetch(requestUrl);
+        const responseJson = await response.json();
+
+        const elevatorsState = responseJson.map(c => {
+            return {
+                id: c.id,
+                currentFloor: c.currentFloor
+            };
+        });
+
+        // create a new "State" object without mutating
+        // the original State object.
+        const newState = Object.assign({}, this.state, {
+            isLoading: false,
+            dataSource: elevatorsState,
+            rowTitle: ['0', '1', '2', '3', '4', '5', '6'].reverse(),
+            tableData: [
+                [this.colHeader('E1'), '', 'x', '', '', '', '', ''],
+                [this.colHeader('E2'), '', '', '', '', '', 'x', ''],
+                [this.colHeader('E3'), '', '', 'x', '', '', '', ''],
+                [this.colHeader('E4'), '', '', '', '', '', '', 'x'],
+                [this.colHeader('E5'), '', '', '', '', 'x', '', ''],
+                [this.colHeader('E6'), '', '', '', '', 'x', '', '']
+            ], //note: one tableData row is in fact column in app
+        });
+
+        this.setState(newState, function () { });
+    }
+    catch (error) {
+        console.error(error);
+    }
+} */
