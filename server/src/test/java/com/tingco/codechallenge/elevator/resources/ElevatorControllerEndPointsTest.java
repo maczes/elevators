@@ -1,11 +1,13 @@
 package com.tingco.codechallenge.elevator.resources;
 
+import org.eclipse.jetty.http.HttpStatus;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 
@@ -34,7 +36,10 @@ public class ElevatorControllerEndPointsTest {
     @Test
     public void pong() {
         String expected = "pong";
-        Assertions.assertEquals(expected, endPoints.ping());
+        ResponseEntity<String> resp = endPoints.ping();
+
+        Assertions.assertEquals(expected, resp.getBody());
+        Assertions.assertEquals(HttpStatus.OK_200, resp.getStatusCode());
     }
 
 }

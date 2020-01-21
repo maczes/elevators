@@ -13,16 +13,9 @@ import org.springframework.web.context.request.WebRequest;
 
 @ControllerAdvice
 public class ApiExceptionHandler {
-    // @ExceptionHandler(ServletRequestBindingException.class)
-    // public final ResponseEntity<Object> handleHeaderException(Exception ex,
-    // WebRequest request)
-    // {
-    // List<String> details = new ArrayList<>();
-    // details.add(ex.getLocalizedMessage());
 
     // ErrorResponse error = new ErrorResponse("Bad Request", details);
     // return new ResponseEntity(error, HttpStatus.BAD_REQUEST);
-    // }
 
     @ExceptionHandler(Exception.class)
     public final ResponseEntity<Object> handleAllExceptions(Exception ex, WebRequest request) {
