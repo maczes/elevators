@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, StyleSheet, Button, Text } from 'react-native';
+import { View, StyleSheet, Button, Text, TouchableOpacity, Image } from 'react-native';
 import Dropdown from './floor-num-dropdown';
-import Modal from "react-native-modal";
+import Modal from 'react-native-modal';
+import FloorNumDropdownContainer from '../containers/floor-num-dropdown-container';
 
 export default class MidGrid extends React.Component {
 
@@ -15,9 +16,6 @@ export default class MidGrid extends React.Component {
 
     onGoButtonClicked = () => {
         this.toggleModal();
-
-        // const { userId, dispatch } = this.props
-        // dispatch({ type: 'USER_FETCH_REQUESTED', payload: { userId } })
     }
 
     toggleModal = () => {
@@ -29,10 +27,14 @@ export default class MidGrid extends React.Component {
             <View style={{ flex: 1 }}>
                 <Text style={stylesMidGrid.label}>Pick up start and target floor by clicking "Request Elevator"</Text>
                 <Button title="Request Elevator" onPress={this.onGoButtonClicked} />
-                <Modal isVisible={this.state.isModalVisible}>
+                <Modal isVisible={this.state.isModalVisible} onRequestClose={this.toggleModal}>
+                    <TouchableOpacity onPress={this.toggleModal}>
+                        <Image style={[stylesMidGrid.modalBackIcon]}
+                            source={require('../assets/icon-back.png')} />
+                    </TouchableOpacity>
                     <View style={stylesMidGrid.container}>
-                        <Dropdown caption="from floor:" />
-                        <Dropdown caption="to floor:" />
+                        {/* <Dropdown /> */}
+                        <FloorNumDropdownContainer />
                         <Button title="Go" style={stylesMidGrid.btn} onPress={this.toggleModal} />
                     </View>
                 </Modal>
@@ -58,5 +60,10 @@ const stylesMidGrid = StyleSheet.create({
     label: {
         alignItems: 'center',
         textAlign: 'center',
-    }
+    },
+    modalBackIcon: {
+        height: 25,
+        width: 25,
+    },
+
 });

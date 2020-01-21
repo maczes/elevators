@@ -3,16 +3,22 @@ import { StyleSheet, Text, View } from 'react-native';
 import ElevatorGrid from './elevator-grid';
 import MidGrid from './mid-grid';
 import InfoGrid from './info-grid';
-import FetchExample from './anteroom/FetchExample';
+
+// import { createStore, applyMiddleware } from 'redux'
+// import createSagaMiddleware from 'redux-saga'
+
+// import floorNumDropdownReducer from '../reducers/floor-num-dropdown-reducer'
+// import floorNumDropdownSaga from '../sagas/floor-num-dropdown-saga'
+
+// /** initialize redux-saga */
+// const sagaMiddleware = createSagaMiddleware()
+// const store = createStore(floorNumDropdownReducer, applyMiddleware(sagaMiddleware))
+// sagaMiddleware.run(floorNumDropdownSaga)
 
 export default class Main extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(props);
-        this.state = {
-
-        }
     }
 
     render() {
@@ -33,8 +39,6 @@ export default class Main extends React.Component {
                 <View style={stylesDashboard.container}>
                     <InfoGrid />
                 </View>
-
-                {/* <FetchExample requestUrl={this.state.appCfg.BE_URL + '/list'} /> */}
 
             </View>
         );
