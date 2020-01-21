@@ -4,6 +4,6 @@ import { floorNumDropdownReducer, floorNumDropdownDataReducer } from './floor-nu
 const combinedReducers = combineReducers({
     floorNumDropdownReducer,
     floorNumDropdownDataReducer,
-    //add more reducers here
+    //add all reducers used application wide  
 });
 export default combinedReducers;

@@ -11,11 +11,11 @@ export function floorNumDropdownReducer(floor = 0, action) {
     }
 }
 
-export function floorNumDropdownDataReducer(data = [[], []], action) {
+export function floorNumDropdownDataReducer(data = [["0"], ["0"]], action) {
     switch (action.type) {
         case LOAD_DROPDOWN_DATA:
             const dropdownData = [["0", "1", "2", "3", "4", "5"], ["0", "1", "2", "3", "4", "5"]];
-            console.log("returning dropdown data: ", dropdownData)
+            console.log("returning dropdown data: ", dropdownData);
             return dropdownData;
         default:
             return data;

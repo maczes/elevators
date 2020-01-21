@@ -9,6 +9,7 @@ import com.tingco.codechallenge.elevator.resources.request.MoveElevatorRequest;
 import com.tingco.codechallenge.elevator.resources.request.ReleaseElevatorRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,9 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * Rest Resource.
- *
- * @author Sven Wesley
- *
+ * 
  */
 @RestController
 @RequestMapping("/elevator/api/v1")
@@ -44,9 +43,9 @@ public final class ElevatorControllerEndPoints {
      * @return String pong
      */
     @RequestMapping(value = "/ping", method = RequestMethod.GET)
-    public String ping() {
+    public ResponseEntity<String> ping() {
     
-        return "pong";
+        return ResponseEntity.ok().body("pong");
     }
 
     /**

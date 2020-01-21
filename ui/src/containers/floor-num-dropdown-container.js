@@ -5,12 +5,10 @@ import Dropdown from '../components/floor-num-dropdown';
 import { getInitialFloorAction, getTargetFloorAction, loadDropdownDataAction } from '../actions/floor-num-dropdown-action';
 
 const mapStateToProps = (state) => {
-    //alert(`state after changed : ${JSON.stringify(state.floorNumDropdownReducer)}`);
-
     let newState = {
         floorFrom: state.floorNumDropdownReducer ? state.floorNumDropdownReducer : 0,
         floorTo: state.floorNumDropdownReducer ? state.floorNumDropdownReducer : 0,
-        data: state.floorNumDropdownDataReducer ? state.floorNumDropdownDataReducer : [[], []],
+        data: state.floorNumDropdownDataReducer ? state.floorNumDropdownDataReducer : [["0"], ['0']],
     };
 
     console.info(`foor-num-dropdown-reducer state  : ${JSON.stringify(newState)}`);
