@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
         data: state.floorNumDropdownDataReducer ? state.floorNumDropdownDataReducer : [["?"], ['?']],
     };
 
-    console.info(`foor-num-dropdown-reducer state  : ${JSON.stringify(newState)}`);
+    //console.info(`foor-num-dropdown-reducer state  : ${JSON.stringify(newState)}`);
 
     return newState;
 };

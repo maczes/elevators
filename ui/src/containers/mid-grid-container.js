@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
         fromFloor: state.floorNumDropdownReducer.fromFloor,
     };
 
-    console.info(`mid-grid reducer state  : ${JSON.stringify(newState)}`);
+    //console.info(`mid-grid reducer state  : ${JSON.stringify(newState)}`);
 
     return newState;
 };

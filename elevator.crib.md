@@ -39,14 +39,18 @@ import myExportedVar from './my-module'   //  we have the freedom to use
 ### redux connect
 function connect(mapStateToProps?, mapDispatchToProps?, mergeProps?, options?)
 
-The mapStateToProps and mapDispatchToProps deals with your Redux store’s state 
+The mapStateToProps and mapDispatchToProps deals with your Redux store’s state
 and dispatch, respectively. state and dispatch will be supplied to your
 mapStateToProps or mapDispatchToProps functions as the first argument.
 
+more: https://react-redux.js.org/api/connect
 
 
-
-
+ <ReactReduxContext.Consumer>
+    {({ store }) => {
+        console.log("global redux state: ", store.getState());
+    }}
+</ReactReduxContext.Consumer> 
 
    AppConfig = {NUMBER_OF_ELEVATORS:4,
                 NUMBER_OF_FLOORS: 6};

@@ -1,19 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import ElevatorGrid from './elevator-grid';
 import MidGridContainer from '../containers/mid-grid-container';
 import InfoGrid from './info-grid';
-
-// import { createStore, applyMiddleware } from 'redux'
-// import createSagaMiddleware from 'redux-saga'
-
-// import floorNumDropdownReducer from '../reducers/floor-num-dropdown-reducer'
-// import floorNumDropdownSaga from '../sagas/floor-num-dropdown-saga'
-
-// /** initialize redux-saga */
-// const sagaMiddleware = createSagaMiddleware()
-// const store = createStore(floorNumDropdownReducer, applyMiddleware(sagaMiddleware))
-// sagaMiddleware.run(floorNumDropdownSaga)
+import ElevatorGridContainer from '../containers/elevator-grid-container';
 
 export default class Main extends React.Component {
 
@@ -29,7 +18,7 @@ export default class Main extends React.Component {
                 <View style={styles.grid_container}>
                     <Text>Elevator Simulator</Text>
                     <Text>-------------------------</Text>
-                    <ElevatorGrid />
+                    <ElevatorGridContainer />
                 </View >
 
                 <View style={stylesMidGrid.container}>

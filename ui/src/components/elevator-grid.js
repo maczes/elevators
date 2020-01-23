@@ -1,9 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, ActivityIndicator } from 'react-native';
 import { Table, TableWrapper, Col, Cols, Cell } from 'react-native-table-component';
-import ApiClient from '../services/api-client';
-import AppConfig from '../config/app-config';
-import { ReactReduxContext } from 'react-redux';
+import PropTypes from 'prop-types';
 
 
 export default class ElevatorGrid extends React.Component {
@@ -11,89 +9,24 @@ export default class ElevatorGrid extends React.Component {
     constructor(props) {
         super(props);
 
-        this.apiClient = ApiClient.create();
-
         this.state = {
             isLoading: true,
         }
+
+        props.onElevatorGridLoad();
+        //this.loadData();
     }
 
-    elevatorMark = "";
-
-    colHeaderDecorator = (value) => (
-        <View style={styles.colHeader}>
-            <Text style={styles.headerText}>{value}</Text>
-        </View>
-    );
-
-    floorNumberDecorator = (value) => (
-        <View style={styles.rowHeader}>
-            <Text style={styles.headerText}>{value}</Text>
-        </View>
-    );
-
-    elevatorCellDecorator = (value) => (
-        <View style={styles.elevatorCell}>
-            <Text style={styles.headerText}>{value}</Text>
-        </View>
-    );
-
-    async loadData() {
+    loadData() {
         try {
-            console.log("listing elevators ");
+            this.props.onElevatorGridLoad();
+            console.log("listing elevators ", this.props.elevators);
 
-            const response = await this.apiClient.getElevators();
-
-            const elevators = response.data.map(c => {
-                return {
-                    id: c.id,
-                    currentFloor: c.currentFloor
-                };
-            });
-
-            const rowTitleArr = [];
-
-            for (i = 0; i <= AppConfig.NUMBER_OF_FLOORS; i++) {
-                rowTitleArr[i] = this.floorNumberDecorator(i.toString());
-            }
-
-            let tableDataArr = [Array(AppConfig.NUMBER_OF_ELEVATORS).keys()].map(x => {
-                const FLOOR_NUMBER_OFFSET = 2; //one row for header, and one for ground floor (level 0)
-                const FIXED_NUMBER_OF_FLOORS = AppConfig.NUMBER_OF_FLOORS + FLOOR_NUMBER_OFFSET;
-                const rows = [];
-                for (let key of x) {
-                    let row = Array(FIXED_NUMBER_OF_FLOORS)
-                        .fill(this.colHeaderDecorator('E' + (key + 1)), 0, 1)
-                        .fill('', 1, FIXED_NUMBER_OF_FLOORS);
-
-                    e = elevators.filter(obj => obj.id === key);
-                    if (e) {
-                        e.map(z => {
-                            let toIdx = parseInt(FIXED_NUMBER_OF_FLOORS - (z.currentFloor));
-                            let fromIdx = parseInt(FIXED_NUMBER_OF_FLOORS - (z.currentFloor + 1));
-                            row.fill(this.elevatorCellDecorator(this.elevatorMark), fromIdx, toIdx);
-                        });
-                        rows[key] = row;
-                    }
-                    else {
-                        rows[key] = Array(FIXED_NUMBER_OF_FLOORS)
-                            .fill('F' + key, 0, 1)
-                            .fill('', 1, FIXED_NUMBER_OF_FLOORS);
-                    }
-                }
-                return rows;
-            })[0];
-
-            // create a new "State" object without mutating the original State object. 
             const newState = Object.assign({}, this.state, {
                 isLoading: false,
-                dataSource: elevators,
-                rowTitle: rowTitleArr.reverse(),
-                tableData: tableDataArr,
-                //note: one tableData row is in fact column in app
             });
 
-            this.setState(newState, function () { });
+            this.setState(newState);
         }
         catch (error) {
             console.error(error);
@@ -102,8 +35,7 @@ export default class ElevatorGrid extends React.Component {
 
     render() {
 
-        if (this.state.isLoading) {
-            this.loadData();
+        if (this.props.isLoading) {
             console.info('loading activity indicator');
             return (
                 <View style={{ flex: 1, padding: 20 }}>
@@ -114,19 +46,13 @@ export default class ElevatorGrid extends React.Component {
 
         return (
             <View style={styles.container}>
-
-                <ReactReduxContext.Consumer>
-                    {({ store }) => {
-                        console.log("global redux state: ", store.getState());
-                    }}
-                </ReactReduxContext.Consumer>
                 <Table style={{ flexDirection: 'row' }} borderStyle={{ borderWidth: 1 }}>
                     {/* Left Wrapper */}
                     <TableWrapper style={styles.wrapperLeft}>
                         <Cell data="" style={styles.singleHead} />
                         <TableWrapper style={{ flexDirection: 'row' }}>
                             <Col data={['F']} style={styles.head} textStyle={styles.text} />
-                            <Col data={this.state.rowTitle}
+                            <Col data={this.props.rowTitle}
                                 style={styles.title}
                                 heightArr={[30, 30, 30, 30, 30, 30, 30, 30]}
                                 textStyle={styles.titleText}></Col>
@@ -135,7 +61,7 @@ export default class ElevatorGrid extends React.Component {
 
                     {/* Right Wrapper */}
                     <TableWrapper style={styles.wrapperRight}>
-                        <Cols data={this.state.tableData}
+                        <Cols data={this.props.tableData}
                             heightArr={[40, 30, 30, 30, 30, 30, 30, 30]}
                             style={styles.title}
                             textStyle={styles.text} />
@@ -144,6 +70,11 @@ export default class ElevatorGrid extends React.Component {
             </View>
         )
     }
+}
+
+ElevatorGrid.propTypes = {
+    tableData: PropTypes.array.isRequired,
+    onElevatorGridLoad: PropTypes.func.isRequired,
 }
 
 const styles = StyleSheet.create({
