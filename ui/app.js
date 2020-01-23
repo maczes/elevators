@@ -1,12 +1,18 @@
 import React from 'react';
 import Main from './src/components/main'
 
-import { createStore } from 'redux';
+//Redux
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-
 import combinedReducers from './src/reducers';
 
-let store = createStore(combinedReducers);
+//Redux Saga
+import createSagaMiddleware from 'redux-saga';
+import combinedSagas from './src/sagas';
+const sagaMiddleware = createSagaMiddleware();
+
+let store = createStore(combinedReducers, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(combinedSagas);
 
 export default function app() {
 

@@ -1,14 +1,13 @@
 import React from 'react';
 import { View, StyleSheet, Button, Text, TouchableOpacity, Image } from 'react-native';
-import Dropdown from './floor-num-dropdown';
 import Modal from 'react-native-modal';
+import PropTypes from 'prop-types';
 import FloorNumDropdownContainer from '../containers/floor-num-dropdown-container';
 
 export default class MidGrid extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
             isModalVisible: false
         };
@@ -16,6 +15,8 @@ export default class MidGrid extends React.Component {
 
     onGoButtonClicked = () => {
         this.toggleModal();
+        console.log("requesting elevator to the floor no: ", this.props.fromFloor);
+        this.props.onGoButtonClick(this.props.fromFloor);
     }
 
     toggleModal = () => {
@@ -23,24 +24,29 @@ export default class MidGrid extends React.Component {
     };
 
     render() {
+
         return (
             <View style={{ flex: 1 }}>
                 <Text style={stylesMidGrid.label}>Pick up start and target floor by clicking "Request Elevator"</Text>
-                <Button title="Request Elevator" onPress={this.onGoButtonClicked} />
+                <Button title="Request Elevator" onPress={this.toggleModal} />
                 <Modal isVisible={this.state.isModalVisible} onRequestClose={this.toggleModal}>
                     <TouchableOpacity onPress={this.toggleModal}>
                         <Image style={[stylesMidGrid.modalBackIcon]}
                             source={require('../assets/icon-back.png')} />
                     </TouchableOpacity>
                     <View style={stylesMidGrid.container}>
-                        {/* <Dropdown /> */}
                         <FloorNumDropdownContainer />
-                        <Button title="Go" style={stylesMidGrid.btn} onPress={this.toggleModal} />
+                        <Button title="Go" style={stylesMidGrid.btn} onPress={this.onGoButtonClicked} />
                     </View>
                 </Modal>
             </View>
         );
     }
+}
+
+MidGrid.propTypes = {
+    fromFloor: PropTypes.number.isRequired,
+    onGoButtonClick: PropTypes.func.isRequired,
 }
 
 const stylesMidGrid = StyleSheet.create({
@@ -62,8 +68,8 @@ const stylesMidGrid = StyleSheet.create({
         textAlign: 'center',
     },
     modalBackIcon: {
-        height: 25,
-        width: 25,
+        height: 20,
+        width: 20,
     },
 
 });

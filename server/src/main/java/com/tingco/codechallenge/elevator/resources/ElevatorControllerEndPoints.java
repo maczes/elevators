@@ -55,10 +55,10 @@ public final class ElevatorControllerEndPoints {
      * 
      * @return Elevator user can travel in
      */
-    @RequestMapping(value = "/request", method = RequestMethod.GET)
+    @RequestMapping(value = "/request", method = RequestMethod.PUT)
     public ResponseEntity<Elevator> requestElevator(@RequestBody final GetElevatorRequest getElevatorRequest) {
         log.debug("elevator rquested {}", getElevatorRequest);
-        
+
         Elevator elevator = elevatorController.requestElevator(getElevatorRequest.getToFloor());
 
         return ResponseEntity.ok().body(elevator);

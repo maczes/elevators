@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, ActivityIndicator } from 'react-native';
 import { Table, TableWrapper, Col, Cols, Cell } from 'react-native-table-component';
 import ApiClient from '../services/api-client';
 import AppConfig from '../config/app-config';
+import { ReactReduxContext } from 'react-redux';
 
 
 export default class ElevatorGrid extends React.Component {
@@ -10,32 +11,32 @@ export default class ElevatorGrid extends React.Component {
     constructor(props) {
         super(props);
 
-        const elevatorMark = "|";
-
-        this.colHeaderDecorator = (value) => (
-            <View style={styles.colHeader}>
-                <Text style={styles.headerText}>{value}</Text>
-            </View>
-        );
-
-        this.floorNumberDecorator = (value) => (
-            <View style={styles.rowHeader}>
-                <Text style={styles.headerText}>{value}</Text>
-            </View>
-        );
-
-        this.elevatorCellDecorator = (value) => (
-            <View style={styles.elevatorCell}>
-                <Text style={styles.headerText}>{value}</Text>
-            </View>
-        );
-
         this.apiClient = ApiClient.create();
 
         this.state = {
             isLoading: true,
         }
     }
+
+    elevatorMark = "";
+
+    colHeaderDecorator = (value) => (
+        <View style={styles.colHeader}>
+            <Text style={styles.headerText}>{value}</Text>
+        </View>
+    );
+
+    floorNumberDecorator = (value) => (
+        <View style={styles.rowHeader}>
+            <Text style={styles.headerText}>{value}</Text>
+        </View>
+    );
+
+    elevatorCellDecorator = (value) => (
+        <View style={styles.elevatorCell}>
+            <Text style={styles.headerText}>{value}</Text>
+        </View>
+    );
 
     async loadData() {
         try {
@@ -113,6 +114,12 @@ export default class ElevatorGrid extends React.Component {
 
         return (
             <View style={styles.container}>
+
+                <ReactReduxContext.Consumer>
+                    {({ store }) => {
+                        console.log("global redux state: ", store.getState());
+                    }}
+                </ReactReduxContext.Consumer>
                 <Table style={{ flexDirection: 'row' }} borderStyle={{ borderWidth: 1 }}>
                     {/* Left Wrapper */}
                     <TableWrapper style={styles.wrapperLeft}>

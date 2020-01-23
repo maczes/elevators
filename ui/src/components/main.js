@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import ElevatorGrid from './elevator-grid';
-import MidGrid from './mid-grid';
+import MidGridContainer from '../containers/mid-grid-container';
 import InfoGrid from './info-grid';
 
 // import { createStore, applyMiddleware } from 'redux'
@@ -33,7 +33,7 @@ export default class Main extends React.Component {
                 </View >
 
                 <View style={stylesMidGrid.container}>
-                    <MidGrid />
+                    <MidGridContainer />
                 </View>
 
                 <View style={stylesDashboard.container}>

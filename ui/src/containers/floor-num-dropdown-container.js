@@ -26,10 +26,10 @@ const mapDispatchToProps = (dispatch) => {
         loadDropdownData: () => {
             dispatch(loadDropdownDataAction());
         },
-        onFromFloorClick1: (request = { fromFloor, toFloor }) => {
+        onFromFloorClick: (request = { fromFloor, toFloor }) => {
             dispatch(getInitialFloorAction(request));
         },
-        onToFloorClick1: (request = { fromFloor, toFloor }) => {
+        onToFloorClick: (request = { fromFloor, toFloor }) => {
             dispatch(getTargetFloorAction(request));
         },
         resetComponent: () => {
