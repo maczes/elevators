@@ -71,7 +71,7 @@ public final class ElevatorControllerEndPoints {
      * 
      * @return Elevator user can travel in
      */
-    @RequestMapping(value = "/move", method = RequestMethod.GET)
+    @RequestMapping(value = "/move", method = RequestMethod.PUT)
     public ResponseEntity<Void> moveElevator(@RequestBody final MoveElevatorRequest moveElevatorRequest) {
         log.debug("elevator move rquested {}", moveElevatorRequest);
 
@@ -87,7 +87,7 @@ public final class ElevatorControllerEndPoints {
      * 
      * @return Elevator user can travel in
      */
-    @RequestMapping(value = "/release", method = RequestMethod.GET)
+    @RequestMapping(value = "/release", method = RequestMethod.PUT)
     public ResponseEntity<Void> releaseElevator(@RequestBody final ReleaseElevatorRequest releaseElevatorRequest) {
         log.debug("elevator release rquested {}", releaseElevatorRequest);
 

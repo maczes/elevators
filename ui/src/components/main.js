@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import MidGridContainer from '../containers/mid-grid-container';
-import InfoGrid from './info-grid';
 import ElevatorGridContainer from '../containers/elevator-grid-container';
+import InfoGridContainer from '../containers/info-grid-container';
 
 export default class Main extends React.Component {
 
@@ -26,7 +26,7 @@ export default class Main extends React.Component {
                 </View>
 
                 <View style={stylesDashboard.container}>
-                    <InfoGrid />
+                    <InfoGridContainer />
                 </View>
 
             </View>

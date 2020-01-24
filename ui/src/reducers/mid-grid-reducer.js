@@ -1,5 +1,4 @@
 import {
-    ON_GO_BUTTON_CLICK,
     ON_REQUEST_ELEVATOR_SUCCESS,
 } from "../actions/mid-grid-action";
 

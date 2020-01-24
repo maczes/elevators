@@ -13,8 +13,9 @@ const create = (baseURL = AppConfig.API_URL) => {
   })
 
   const getElevators = (params) => api.get('/list', params);
-  const moveElevator = (params) => api.get('/move', params);
-  const requestElevator = (getElevatorRequest) => api.put('/request', getElevatorRequest);
+  const moveElevator = (payload) => api.put('/move', payload);
+  const requestElevator = (payload) => api.put('/request', payload);
+  const releaseElevator = (payload) => api.put('/release', payload);
 
   const naviMonitor = (response) => console.log('api call tracker: ', response)
   api.addMonitor(naviMonitor)
@@ -22,7 +23,8 @@ const create = (baseURL = AppConfig.API_URL) => {
   return {
     getElevators,
     moveElevator,
-    requestElevator
+    requestElevator,
+    releaseElevator,
   }
 }
 

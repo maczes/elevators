@@ -13,7 +13,7 @@ export function onLoadElevatorsReducer(state = {
             let tableData = processElevators(action.elevators);
             console.log("result:", tableData);
 
-            return state = { tableData: tableData, rowTitle: buildRowTitle(), isLoading: false };
+            return state = { tableData: tableData, rowTitle: buildRowTitle().reverse(), isLoading: false };
         default:
             return state;
     }

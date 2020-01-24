@@ -44,8 +44,6 @@ public class ElevatorService {
     private Elevator calculateClosestOne(final int toFloor, final List<Elevator> elevatorList) {
         return elevatorList.stream().min((x, y) -> {
             int result = Math.abs(x.getCurrentFloor() - toFloor) - Math.abs(y.getCurrentFloor() - toFloor);
-            // TODO(ms): remove me
-            // log.debug("comparing: {} and {}. Result: {}", x, y, result);
             return result;
         }).get();
     }

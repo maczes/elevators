@@ -50,7 +50,17 @@ more: https://react-redux.js.org/api/connect
     {({ store }) => {
         console.log("global redux state: ", store.getState());
     }}
-</ReactReduxContext.Consumer> 
+</ReactReduxContext.Consumer>
+
+
+// const {
+//     direction,
+//     addressedFloor,
+//     id,
+//     busy,
+//     currentFloor
+// } = result;
+
 
    AppConfig = {NUMBER_OF_ELEVATORS:4,
                 NUMBER_OF_FLOORS: 6};

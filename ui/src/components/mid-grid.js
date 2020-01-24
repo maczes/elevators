@@ -16,7 +16,7 @@ export default class MidGrid extends React.Component {
     onGoButtonClicked = () => {
         this.toggleModal();
         console.log("requesting elevator to the floor no: ", this.props.fromFloor);
-        this.props.onGoButtonClick(this.props.fromFloor);
+        this.props.onGoButtonClick(this.props.fromFloor, this.props.toFloor);
     }
 
     toggleModal = () => {

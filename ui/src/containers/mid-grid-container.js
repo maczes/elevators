@@ -10,18 +10,17 @@ const mapStateToProps = (state) => {
     let newState = {
         elevator: state.onGoButtonClickReducer,
         fromFloor: state.floorNumDropdownReducer.fromFloor,
+        toFloor: state.floorNumDropdownReducer.toFloor,
     };
-
     //console.info(`mid-grid reducer state  : ${JSON.stringify(newState)}`);
-
     return newState;
 };
 
 const mapDispatchToProps = (dispatch) => {
 
     return {
-        onGoButtonClick: (fromFloor) => {
-            dispatch(onGoButtonClickAction(fromFloor));
+        onGoButtonClick: (fromFloor, toFloor) => {
+            dispatch(onGoButtonClickAction(fromFloor, toFloor));
         },
     };
 }
