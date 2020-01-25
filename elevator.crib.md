@@ -53,6 +53,25 @@ more: https://react-redux.js.org/api/connect
 </ReactReduxContext.Consumer>
 
 
+funciton to generate hashcode base on string:
+// Convert to 32bit integer
+function stringToHash(string) {
+  let hash = 0;
+
+  if (string.length === 0) return hash;
+
+  for (let i = 0; i < string.length; i += 1) {
+    const char = string.charCodeAt(i);
+    // eslint-disable-next-line no-bitwise
+    hash = ((hash << 5) - hash) + char;
+    // eslint-disable-next-line no-bitwise
+    hash &= hash;
+  }
+
+  return hash;
+}
+
+
 // const {
 //     direction,
 //     addressedFloor,
