@@ -1,21 +1,48 @@
 /* eslint-disable no-use-before-define */
 import React from 'react';
 import {
-  StyleSheet, Text, SafeAreaView, ScrollView, View,
+  StyleSheet, Text, SafeAreaView, ScrollView, View, RefreshControl,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import stringToHash from '../utils/hashcode-generator';
+
+function wait(timeout) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, timeout);
+  });
+}
 
 const InfoGrid = (props) => {
+  const [refreshing, setRefreshing] = React.useState(false);
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+
+    wait(2000).then(() => setRefreshing(false));
+  }, [refreshing]);
+
   const { noticeBoard } = props;
+
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.container}>
         <Text>System Activity Monitoring Dashboard</Text>
-        <ScrollView style={styles.scrollView}>
+        <ScrollView
+          style={styles.scrollView}
+          key={noticeBoard.lenght}
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }
+        >
           {noticeBoard.map((item) => (
-            <Text style={styles.text} key={stringToHash(item)}>
-              {item}
+            <Text style={styles.text} key={item.datestamp}>
+              <Text>
+                {item.datestamp}
+                {':'}
+              </Text>
+              <Text style={styles.reportText}>
+                {' '}
+                {item.report}
+              </Text>
             </Text>
           ))}
         </ScrollView>
@@ -26,9 +53,9 @@ const InfoGrid = (props) => {
 
 export default InfoGrid;
 
-// InfoGrid.propTypes = {
-//   noticeBoard: PropTypes.arrayOf.isRequired,
-// };
+InfoGrid.propTypes = {
+  noticeBoard: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 const bgColor = 'white';
 const styles = StyleSheet.create({
@@ -43,6 +70,11 @@ const styles = StyleSheet.create({
   text: {
     flex: 1,
     fontSize: 12,
+  },
+  reportText: {
+    flex: 1,
+    fontSize: 12,
+    fontWeight: 'bold',
   },
 });
 
