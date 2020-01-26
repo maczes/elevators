@@ -30,11 +30,11 @@ export default class Dropdown extends React.Component {
             if (selection === 0) {
               this.props.onFromFloorClick({
                 fromFloor: data[selection][row],
-                toFloor: this.props.floorTo,
+                toFloor: this.props.request.floorTo,
               });
             } else if (selection === 1) {
               this.props.onToFloorClick({
-                fromFloor: this.props.fromFloor,
+                fromFloor: this.props.request.fromFloor,
                 toFloor: data[selection][row],
               });
             } else {
