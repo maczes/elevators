@@ -1,5 +1,5 @@
 /**
- * Action types definitions 
+ * Action types definitions
  */
 export const LOAD_DROPDOWN_DATA = 'LOAD_DROPDOWN_DATA';
 export const ON_INITIAL_FLOOR_SELECT = 'ON_INITIAL_FLOOR_SELECT';
@@ -9,30 +9,32 @@ export const ON_FLOOR_NUM_DROPDOWN_RESET = 'ON_FLOOR_NUM_DROPDOWN_RESET';
 /**
  * Action definitions
  */
-export const getInitialFloorAction = (request = { fromFloor, toFloor }) => {
-    return {
-        type: ON_INITIAL_FLOOR_SELECT,
-        request: request,
-    }
-}
+export const getInitialFloorAction = (request = { fromFloor, toFloor }) => ({
+  type: ON_INITIAL_FLOOR_SELECT,
+  request,
+});
 
-export const getTargetFloorAction = (request = { fromFloor, toFloor }) => {
-    return {
-        type: ON_TARGET_FLOOR_SELECT,
-        request: request,
-    }
-}
+export const getTargetFloorAction = (request = { fromFloor, toFloor }) => ({
+  type: ON_TARGET_FLOOR_SELECT,
+  request,
+});
 
-export const loadDropdownDataAction = () => {
-    return {
-        type: LOAD_DROPDOWN_DATA,
-        data: [[], []],
-    }
-}
+export const loadDropdownDataAction = () => ({
+  type: LOAD_DROPDOWN_DATA,
+  data: [[], []],
+});
 
-export const resetComponentAction = () => {
-    return {
-        type: ON_FLOOR_NUM_DROPDOWN_RESET,
-    }
-}
+export const resetComponentAction = () => ({
+  type: ON_FLOOR_NUM_DROPDOWN_RESET,
+});
 
+// attempt to use react-actions
+// export const getInitialFloorAction = createAction(
+//   'ON_INITIAL_FLOOR_SELECT',
+//   (request) => ({ fromFloor: request.fromFloor, toFloor: request.toFloor }),
+// );
+
+// export const getTargetFloorAction = createAction(
+//   'ON_TARGET_FLOOR_SELECT',
+//   (request) => ({ fromFloor: request.fromFloor, toFloor: request.toFloor }),
+// );

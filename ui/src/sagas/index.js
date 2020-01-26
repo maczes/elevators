@@ -4,8 +4,8 @@ import { onGoButtonClickSaga } from './mid-grid-saga';
 import { onElevatorListLoadSaga } from './elevator-grid-saga';
 
 export default function* combinedSagas() {
-    yield all([
-        onGoButtonClickSaga(),
-        onElevatorListLoadSaga()
-    ]);
+  yield all([
+    onGoButtonClickSaga(),
+    onElevatorListLoadSaga(),
+  ]);
 }

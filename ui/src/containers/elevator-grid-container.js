@@ -2,28 +2,25 @@ import { connect } from 'react-redux';
 import ElevatorGrid from '../components/elevator-grid';
 
 import {
-    onElevatorGridLoadAction,
+  onElevatorGridLoadAction,
 } from '../actions/elevator-grid-action';
 
 const mapStateToProps = (state) => {
+  const newState = {
+    tableData: state.onLoadElevatorsReducer.tableData,
+    rowTitle: state.onLoadElevatorsReducer.rowTitle,
+    isLoading: state.onLoadElevatorsReducer.isLoading,
+  };
+  // console.info(`elevator-grid reducer state  : ${JSON.stringify(newState)}`);
 
-    let newState = {
-        tableData: state.onLoadElevatorsReducer.tableData,
-        rowTitle: state.onLoadElevatorsReducer.rowTitle,
-        isLoading: state.onLoadElevatorsReducer.isLoading,
-    };
-    //console.info(`elevator-grid reducer state  : ${JSON.stringify(newState)}`);
-
-    return newState;
+  return newState;
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onElevatorGridLoad: () => {
-            dispatch(onElevatorGridLoadAction());
-        }
-    };
-}
+const mapDispatchToProps = (dispatch) => ({
+  onElevatorGridLoad: () => {
+    dispatch(onElevatorGridLoadAction());
+  }
+});
 
 const ElevatorGridContainer = connect(mapStateToProps, mapDispatchToProps)(ElevatorGrid);
 

@@ -1,5 +1,5 @@
 /**
- * Action types definitions 
+ * Action types definitions
  */
 export const ON_ELEVATOR_GRID_LOAD = 'ON_ELEVATOR_GRID_LOAD';
 export const ON_REQUEST_ELEVATOR_LIST_SUCCESS = 'ON_REQUEST_ELEVATOR_LIST_SUCCESS';
@@ -7,16 +7,11 @@ export const ON_REQUEST_ELEVATOR_LIST_SUCCESS = 'ON_REQUEST_ELEVATOR_LIST_SUCCES
 /**
  * Action definitions
  */
-export const onElevatorGridLoadAction = () => {
-    return {
-        type: ON_ELEVATOR_GRID_LOAD,
-    }
-}
+export const onElevatorGridLoadAction = () => ({
+  type: ON_ELEVATOR_GRID_LOAD,
+});
 
-export const onRequestElevatorListSuccessAction = (elevators) => {
-    return {
-        type: ON_REQUEST_ELEVATOR_LIST_SUCCESS,
-        elevators: elevators,
-    }
-}
-
+export const onRequestElevatorListSuccessAction = (elevators) => ({
+  type: ON_REQUEST_ELEVATOR_LIST_SUCCESS,
+  elevators,
+});
