@@ -32,22 +32,29 @@ export function* onGoButtonClickSaga() {
       yield publishActivityReport('elevator requested');
       yield publishActivityReport(`E${eId} will be in use`);
 
+      if (result.data.currentFloor !== fromFloor) {
+        yield* processMoveElevator(fromFloor, eId);
+      }
+
       yield put({ type: ON_REQUEST_ELEVATOR_SUCCESS, elevator: result.data });
-      yield call(moveElevator, result.data.id, toFloor);
 
-      yield publishActivityReport(`E${eId} is moving`);
+      yield* processMoveElevator(toFloor, eId);
 
-      yield delay(3000); // this is to simulate move of the elevator
-      yield call(releaseElevator, result.data.id);
-
-      yield publishActivityReport(`E${eId} arrived`);
-
-      yield put({ type: ON_ELEVATOR_GRID_LOAD });
+      yield publishActivityReport(`task done. E${eId} enters the ready state`);
     } catch (err) {
       console.error('err in saga: ', err);
       // yield put(loginFailure(err));
     }
   }
+}
+
+function* processMoveElevator(toFloor, eId) {
+  yield call(moveElevator, eId - groundFloorOffset, toFloor);
+  yield publishActivityReport(`E${eId} is moving to ${toFloor}`);
+  yield delay(3000); // this is to simulate move of the elevator
+  yield call(releaseElevator, eId - groundFloorOffset);
+  yield publishActivityReport(`E${eId} arrived to ${toFloor}`);
+  yield put({ type: ON_ELEVATOR_GRID_LOAD });
 }
 
 function requestElevator(floor) {
