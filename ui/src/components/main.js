@@ -4,25 +4,24 @@ import { StyleSheet, Text, View } from 'react-native';
 import MidGridContainer from '../containers/mid-grid-container';
 import ElevatorGridContainer from '../containers/elevator-grid-container';
 import InfoGridContainer from '../containers/info-grid-container';
+import ErrorHandler from '../errors/error-handler';
 
 export default function Main() {
   return (
     <View style={styles.topContainer}>
-
-      <View style={styles.elevatorGridContainer}>
-        <Text>Elevator Simulator</Text>
-        <Text>-------------------------</Text>
-        <ElevatorGridContainer />
-      </View>
-
-      <View style={styles.midGridContainer}>
-        <MidGridContainer />
-      </View>
-
-      <View style={styles.infoGridContainer}>
-        <InfoGridContainer />
-      </View>
-
+      <ErrorHandler>
+        <View style={styles.elevatorGridContainer}>
+          <Text>Elevator Simulator</Text>
+          <Text>-------------------------</Text>
+          <ElevatorGridContainer />
+        </View>
+        <View style={styles.midGridContainer}>
+          <MidGridContainer />
+        </View>
+        <View style={styles.infoGridContainer}>
+          <InfoGridContainer />
+        </View>
+      </ErrorHandler>
     </View>
   );
 }

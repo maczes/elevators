@@ -7,7 +7,7 @@ import Modal from 'react-native-modal';
 import PropTypes from 'prop-types';
 import FloorNumDropdownContainer from '../containers/floor-num-dropdown-container';
 
-const backIcon = require('../assets/icon-back.png');
+const goBackIcon = require('../assets/icon-back.png');
 
 export default class MidGrid extends React.Component {
   constructor(props) {
@@ -17,10 +17,17 @@ export default class MidGrid extends React.Component {
     };
   }
 
-  onGoButtonClicked = () => {
-    this.toggleModal();
-    console.log('requesting elevator to the floor no: ', this.props.fromFloor);
-    this.props.onGoButtonClick(this.props.fromFloor, this.props.toFloor);
+  onGoButtonClickListener = (props, modalCallbackAction) => {
+    const {
+      onGoButtonClick,
+      fromFloor,
+      toFloor,
+    } = props;
+
+    console.log(`requesting elevator to the floor no: ${fromFloor}, target floor: ${toFloor}`);
+
+    modalCallbackAction();
+    onGoButtonClick(fromFloor, toFloor);
   }
 
   toggleModal = () => {
@@ -28,6 +35,8 @@ export default class MidGrid extends React.Component {
   };
 
   render() {
+    const { isModalVisible } = this.state;
+
     return (
       <View style={styles.container}>
         <Text style={styles.label}>
@@ -35,16 +44,16 @@ export default class MidGrid extends React.Component {
           clicking Request Elevator
         </Text>
         <Button title="Request Elevator" onPress={this.toggleModal} />
-        <Modal isVisible={this.state.isModalVisible} onRequestClose={this.toggleModal}>
+        <Modal isVisible={isModalVisible} onRequestClose={this.toggleModal}>
           <TouchableOpacity onPress={this.toggleModal}>
             <Image
               style={styles.modalBackIcon}
-              source={backIcon}
+              source={goBackIcon}
             />
           </TouchableOpacity>
           <View style={styles.dropdownContainer}>
             <FloorNumDropdownContainer />
-            <Button title="Go" style={styles.btn} onPress={this.onGoButtonClicked} />
+            <Button title="Go" style={styles.btn} onPress={() => this.onGoButtonClickListener(this.props, this.toggleModal)} />
           </View>
         </Modal>
       </View>

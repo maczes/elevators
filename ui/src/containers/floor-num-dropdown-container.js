@@ -21,11 +21,11 @@ const mapDispatchToProps = (dispatch) => ({
   loadDropdownData: () => {
     dispatch(loadDropdownDataAction());
   },
-  onFromFloorClick: (fromFloor, toFloor) => {
-    dispatch(getInitialFloorAction({ fromFloor, toFloor }));
+  onFromFloorClick: (moveRequest) => {
+    dispatch(getInitialFloorAction(moveRequest));
   },
-  onToFloorClick: (fromFloor, toFloor) => {
-    dispatch(getTargetFloorAction({ fromFloor, toFloor }));
+  onToFloorClick: (moveRequest) => {
+    dispatch(getTargetFloorAction(moveRequest));
   },
   resetComponent: () => {
     dispatch(resetComponentAction());

@@ -13,15 +13,21 @@ import org.springframework.web.context.request.WebRequest;
 @ControllerAdvice
 public class ApiExceptionHandler {
 
-    // ErrorResponse error = new ErrorResponse("Bad Request", details);
-    // return new ResponseEntity(error, HttpStatus.BAD_REQUEST);
-
     @ExceptionHandler(Exception.class)
-    public final ResponseEntity<Object> handleAllExceptions(Exception ex, WebRequest request) {
+    public final ResponseEntity<Object> handleAllUnhandledExceptions(Exception ex, WebRequest request) {
         List<String> details = Lists.newArrayList();
         details.add(ex.getLocalizedMessage());
 
         ErrorResponse error = new ErrorResponse("Server Error", details);
         return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public final ResponseEntity<Object> handleInvalidParamsExceptions(Exception ex, WebRequest request) {
+        List<String> details = Lists.newArrayList();
+        details.add(ex.getLocalizedMessage());
+
+        ErrorResponse error = new ErrorResponse("Invalid request parameters provided", details);
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 }
