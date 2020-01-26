@@ -9,6 +9,7 @@ import com.tingco.codechallenge.elevator.resources.request.MoveElevatorRequest;
 import com.tingco.codechallenge.elevator.resources.request.ReleaseElevatorRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,9 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * Rest Resource.
- *
- * @author Sven Wesley
- *
+ * 
  */
 @RestController
 @RequestMapping("/elevator/api/v1")
@@ -44,9 +43,9 @@ public final class ElevatorControllerEndPoints {
      * @return String pong
      */
     @RequestMapping(value = "/ping", method = RequestMethod.GET)
-    public String ping() {
-    
-        return "pong";
+    public ResponseEntity<String> ping() {
+
+        return ResponseEntity.ok().body("pong");
     }
 
     /**
@@ -56,11 +55,13 @@ public final class ElevatorControllerEndPoints {
      * 
      * @return Elevator user can travel in
      */
-    @RequestMapping(value = "/request", method = RequestMethod.GET)
-    public Elevator requestElevator(@RequestBody final GetElevatorRequest getElevatorRequest) {
+    @RequestMapping(value = "/request", method = RequestMethod.PUT)
+    public ResponseEntity<Elevator> requestElevator(@RequestBody final GetElevatorRequest getElevatorRequest) {
         log.debug("elevator rquested {}", getElevatorRequest);
 
-        return elevatorController.requestElevator(getElevatorRequest.getToFloor());
+        Elevator elevator = elevatorController.requestElevator(getElevatorRequest.getToFloor());
+
+        return ResponseEntity.ok().body(elevator);
     }
 
     /**
@@ -70,11 +71,13 @@ public final class ElevatorControllerEndPoints {
      * 
      * @return Elevator user can travel in
      */
-    @RequestMapping(value = "/move", method = RequestMethod.GET)
-    public void moveElevator(@RequestBody final MoveElevatorRequest moveElevatorRequest) {
+    @RequestMapping(value = "/move", method = RequestMethod.PUT)
+    public ResponseEntity<Void> moveElevator(@RequestBody final MoveElevatorRequest moveElevatorRequest) {
         log.debug("elevator move rquested {}", moveElevatorRequest);
 
         elevatorController.moveElevator(moveElevatorRequest.getToFloor(), moveElevatorRequest.getElevatorId());
+
+        return ResponseEntity.ok().build();
     }
 
     /**
@@ -84,13 +87,14 @@ public final class ElevatorControllerEndPoints {
      * 
      * @return Elevator user can travel in
      */
-    @RequestMapping(value = "/release", method = RequestMethod.GET)
-    public void releaseElevator(@RequestBody final ReleaseElevatorRequest releaseElevatorRequest) {
+    @RequestMapping(value = "/release", method = RequestMethod.PUT)
+    public ResponseEntity<Void> releaseElevator(@RequestBody final ReleaseElevatorRequest releaseElevatorRequest) {
         log.debug("elevator release rquested {}", releaseElevatorRequest);
 
         elevatorController.releaseElevator(releaseElevatorRequest.getElevatorId());
-    }
 
+        return ResponseEntity.ok().build();
+    }
 
     /**
      * List all elevators

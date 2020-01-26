@@ -1,27 +1,31 @@
-// a library to wrap and simplify api calls
-import apisauce from 'apisauce'
-
-import AppConfig from '../config/app-config'
+import apisauce from 'apisauce';
+import AppConfig from '../config/app-config';
 
 const create = (baseURL = AppConfig.API_URL) => {
-
-  // Create and configure an apisauce-based api object.
   const api = apisauce.create({
     baseURL,
     headers: {
-      'Cache-Control': 'no-cache'
+      'Cache-Control': 'no-cache',
     },
-    timeout: 5000
-  })
+    timeout: AppConfig.API_CALL_TIMEOUT_MILLISECONDS,
+  });
 
-  const getElevators = (options) => api.get('/list', options)
+  const getElevators = (params) => api.get('/list', params);
+  const moveElevator = (payload) => api.put('/move', payload);
+  const requestElevator = (payload) => api.put('/request', payload);
+  const releaseElevator = (payload) => api.put('/release', payload);
+  const naviMonitor = (response) => console.log('api call tracker: ', response);
+
+  api.addMonitor(naviMonitor);
 
   return {
-    // a list of the API functions 
-    getElevators
-  }
-}
+    getElevators,
+    moveElevator,
+    requestElevator,
+    releaseElevator,
+  };
+};
 
 export default {
-  create
-}
+  create,
+};
