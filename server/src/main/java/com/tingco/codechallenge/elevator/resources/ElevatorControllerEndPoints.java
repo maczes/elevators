@@ -9,6 +9,7 @@ import com.tingco.codechallenge.elevator.controller.api.ElevatorController;
 import com.tingco.codechallenge.elevator.resources.request.GetElevatorRequest;
 import com.tingco.codechallenge.elevator.resources.request.MoveElevatorRequest;
 import com.tingco.codechallenge.elevator.resources.request.ReleaseElevatorRequest;
+import com.tingco.codechallenge.elevator.resources.validator.RequestValidator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,12 +29,16 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public final class ElevatorControllerEndPoints {
 
-    private ElevatorController elevatorController;
+    private final ElevatorController elevatorController;
+    private final RequestValidator requestValidator;
 
     @Autowired
-    ElevatorControllerEndPoints(final ElevatorController elevatorController) {
+    ElevatorControllerEndPoints(final ElevatorController elevatorController, final RequestValidator requestValidator) {
+
         log.info("initializing REST controller");
+
         this.elevatorController = elevatorController;
+        this.requestValidator = requestValidator;
     }
 
     /**
@@ -58,6 +63,7 @@ public final class ElevatorControllerEndPoints {
     public ResponseEntity<Elevator> requestElevator(@Valid @RequestBody final GetElevatorRequest getElevatorRequest) {
         log.debug("elevator rquested {}", getElevatorRequest);
 
+        requestValidator.validate(getElevatorRequest);
         Elevator elevator = elevatorController.requestElevator(getElevatorRequest.getToFloor());
 
         return ResponseEntity.ok().body(elevator);
@@ -74,6 +80,7 @@ public final class ElevatorControllerEndPoints {
     public ResponseEntity<Void> moveElevator(@Valid @RequestBody final MoveElevatorRequest moveElevatorRequest) {
         log.debug("elevator move rquested {}", moveElevatorRequest);
 
+        requestValidator.validate(moveElevatorRequest);
         elevatorController.moveElevator(moveElevatorRequest.getToFloor(), moveElevatorRequest.getElevatorId());
 
         return ResponseEntity.ok().build();
@@ -91,6 +98,7 @@ public final class ElevatorControllerEndPoints {
             @Valid @RequestBody final ReleaseElevatorRequest releaseElevatorRequest) {
         log.debug("elevator release rquested {}", releaseElevatorRequest);
 
+        requestValidator.validate(releaseElevatorRequest);
         elevatorController.releaseElevator(releaseElevatorRequest.getElevatorId());
 
         return ResponseEntity.ok().build();
