@@ -24,13 +24,16 @@ export default class MidGrid extends React.Component {
   }
 
   toggleModal = () => {
-    this.setState({ isModalVisible: !this.state.isModalVisible });
+    this.setState((prevState) => ({ isModalVisible: !prevState.isModalVisible }));
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.label}>Pick up start and target floor by clicking Request Elevator</Text>
+        <Text style={styles.label}>
+          Pick up start and target floor by
+          clicking Request Elevator
+        </Text>
         <Button title="Request Elevator" onPress={this.toggleModal} />
         <Modal isVisible={this.state.isModalVisible} onRequestClose={this.toggleModal}>
           <TouchableOpacity onPress={this.toggleModal}>
@@ -51,6 +54,7 @@ export default class MidGrid extends React.Component {
 
 MidGrid.propTypes = {
   fromFloor: PropTypes.number.isRequired,
+  toFloor: PropTypes.number.isRequired,
   onGoButtonClick: PropTypes.func.isRequired,
 };
 

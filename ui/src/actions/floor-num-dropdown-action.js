@@ -9,14 +9,14 @@ export const ON_FLOOR_NUM_DROPDOWN_RESET = 'ON_FLOOR_NUM_DROPDOWN_RESET';
 /**
  * Action definitions
  */
-export const getInitialFloorAction = (request = { fromFloor, toFloor }) => ({
+export const getInitialFloorAction = (fromFloor, toFloor) => ({
   type: ON_INITIAL_FLOOR_SELECT,
-  request,
+  request: { fromFloor, toFloor },
 });
 
-export const getTargetFloorAction = (request = { fromFloor, toFloor }) => ({
+export const getTargetFloorAction = (fromFloor, toFloor) => ({
   type: ON_TARGET_FLOOR_SELECT,
-  request,
+  request: { fromFloor, toFloor },
 });
 
 export const loadDropdownDataAction = () => ({

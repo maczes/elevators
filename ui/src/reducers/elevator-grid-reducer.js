@@ -49,14 +49,14 @@ const processElevators = (elevatorList) => {
           .fill(`E${key + 1}`, 0, 1)
           .fill('', 1, FIXED_NUMBER_OF_FLOORS);
 
-        e = elevators.filter((obj) => obj.id === key);
+        const e = elevators.filter((obj) => obj.id === key);
 
         if (e) {
           e.map((z) => {
             const toIdx = Number(FIXED_NUMBER_OF_FLOORS - (z.currentFloor));
             const fromIdx = Number(FIXED_NUMBER_OF_FLOORS - (z.currentFloor + 1));
             row.fill(elevatorMark, fromIdx, toIdx);
-
+            return z;
           });
           rows[key] = row;
         } else {

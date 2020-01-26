@@ -11,7 +11,7 @@ import {
 const mapStateToProps = (state) => {
   const newState = {
     request: state.floorNumDropdownReducer,
-    data: state.floorNumDropdownDataReducer ? state.floorNumDropdownDataReducer : [['?'], ['?']],
+    data: state.floorNumDropdownDataReducer ? state.floorNumDropdownDataReducer : [[-1], [-1]],
   };
 
   return newState;
@@ -21,11 +21,11 @@ const mapDispatchToProps = (dispatch) => ({
   loadDropdownData: () => {
     dispatch(loadDropdownDataAction());
   },
-  onFromFloorClick: (request = { fromFloor, toFloor }) => {
-    dispatch(getInitialFloorAction(request));
+  onFromFloorClick: (fromFloor, toFloor) => {
+    dispatch(getInitialFloorAction({ fromFloor, toFloor }));
   },
-  onToFloorClick: (request = { fromFloor, toFloor }) => {
-    dispatch(getTargetFloorAction(request));
+  onToFloorClick: (fromFloor, toFloor) => {
+    dispatch(getTargetFloorAction({ fromFloor, toFloor }));
   },
   resetComponent: () => {
     dispatch(resetComponentAction());

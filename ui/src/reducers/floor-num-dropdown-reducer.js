@@ -7,7 +7,7 @@ import {
 } from '../actions/floor-num-dropdown-action';
 import AppConfig from '../config/app-config';
 
-export function floorNumDropdownDataReducer(data = [['?'], ['?']], action) {
+export function floorNumDropdownDataReducer(data = [[-1], [-1]], action) {
   switch (action.type) {
     case LOAD_DROPDOWN_DATA:
       return getDropdownContent();

@@ -34,8 +34,8 @@ export default class Dropdown extends React.Component {
               });
             } else if (selection === 1) {
               this.props.onToFloorClick({
-                toFloor: data[selection][row],
                 fromFloor: this.props.fromFloor,
+                toFloor: data[selection][row],
               });
             } else {
               console.error("can't assign selection: ", selection);
@@ -66,6 +66,12 @@ export default class Dropdown extends React.Component {
 Dropdown.propTypes = {
   loadDropdownData: PropTypes.func.isRequired,
   resetComponent: PropTypes.func.isRequired,
+  data: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired,
+  // fromFloor: PropTypes.number.isRequired,
+  onFromFloorClick: PropTypes.func.isRequired,
+  // floorTo: PropTypes.number.isRequired,
+  onToFloorClick: PropTypes.func.isRequired,
+  request: PropTypes.objectOf(PropTypes.number).isRequired,
 };
 
 const containerBgColor = '#fff';

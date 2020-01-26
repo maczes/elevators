@@ -19,7 +19,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
   onElevatorGridLoad: () => {
     dispatch(onElevatorGridLoadAction());
-  }
+  },
 });
 
 const ElevatorGridContainer = connect(mapStateToProps, mapDispatchToProps)(ElevatorGrid);

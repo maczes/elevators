@@ -36,7 +36,7 @@ export default class ElevatorGrid extends React.Component {
     if (this.props.isLoading) {
       console.info('loading activity indicator');
       return (
-        <View style={{ flex: 1, padding: 20 }}>
+        <View style={styles.indicator}>
           <ActivityIndicator />
         </View>
       );
@@ -44,11 +44,11 @@ export default class ElevatorGrid extends React.Component {
 
     return (
       <View style={styles.container}>
-        <Table style={{ flexDirection: 'row' }} borderStyle={{ borderWidth: 1 }}>
+        <Table style={styles.table} borderStyle={styles.tableBorderStyle}>
           {/* Left Wrapper */}
           <TableWrapper style={styles.wrapperLeft}>
             <Cell data="" style={styles.singleHead} />
-            <TableWrapper style={{ flexDirection: 'row' }}>
+            <TableWrapper style={styles.wrapperLeftRows}>
               <Col data={['F']} style={styles.head} textStyle={styles.text} />
               <Col
                 data={this.props.rowTitle}
@@ -76,6 +76,11 @@ export default class ElevatorGrid extends React.Component {
 
 ElevatorGrid.propTypes = {
   onElevatorGridLoad: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  rowTitle: PropTypes.arrayOf(PropTypes.string).isRequired,
+  tableData: PropTypes.arrayOf(
+    PropTypes.arrayOf(PropTypes.string),
+  ).isRequired,
 };
 
 const singleHeadBgColor = '#c8e1ff';
@@ -93,8 +98,10 @@ const styles = StyleSheet.create({
   },
   singleHead: { width: 60, height: 40, backgroundColor: singleHeadBgColor },
   head: { flex: 1, backgroundColor: headBgColor },
-  title: { flex: 1, backgroundColor: titleBgColor }, // @ elevators IDs cell style; flex: 1 - this is cell division ratio
-  titleText: { marginRight: 0, textAlign: 'center' }, // @ elevators IDs cell text style;
+  title: { flex: 1, backgroundColor: titleBgColor },
+  // above: elevators IDs cell style; flex: 1 - this is cell division ratio
+  titleText: { marginRight: 0, textAlign: 'center' },
+  // above: elevators IDs cell text style;
   text: { textAlign: 'center' },
   // colHeader: {
   //   flex: 1, backgroundColor: colHeaderBgColor, textAlign: 'center', paddingTop: 10,
@@ -105,5 +112,9 @@ const styles = StyleSheet.create({
   // elevatorCell: { flex: 1, backgroundColor: '#ffcccc', textAlign: 'center' },
   // headerText: { textAlign: 'center' },
   wrapperLeft: { width: 60 },
+  wrapperLeftRows: { flexDirection: 'row' },
   wrapperRight: { flex: 1, flexDirection: 'column' },
+  table: { flexDirection: 'row' },
+  tableBorderStyle: { borderWidth: 1 },
+  indicator: { flex: 1, padding: 20 },
 });
