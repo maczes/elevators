@@ -2,6 +2,8 @@ package com.tingco.codechallenge.elevator.resources;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import com.tingco.codechallenge.elevator.controller.api.Elevator;
 import com.tingco.codechallenge.elevator.controller.api.ElevatorController;
 import com.tingco.codechallenge.elevator.resources.request.GetElevatorRequest;
@@ -28,9 +30,6 @@ public final class ElevatorControllerEndPoints {
 
     private ElevatorController elevatorController;
 
-    // @Autowired
-    // private Tour tourTask;
-
     @Autowired
     ElevatorControllerEndPoints(final ElevatorController elevatorController) {
         log.info("initializing REST controller");
@@ -56,7 +55,7 @@ public final class ElevatorControllerEndPoints {
      * @return Elevator user can travel in
      */
     @RequestMapping(value = "/request", method = RequestMethod.PUT)
-    public ResponseEntity<Elevator> requestElevator(@RequestBody final GetElevatorRequest getElevatorRequest) {
+    public ResponseEntity<Elevator> requestElevator(@Valid @RequestBody final GetElevatorRequest getElevatorRequest) {
         log.debug("elevator rquested {}", getElevatorRequest);
 
         Elevator elevator = elevatorController.requestElevator(getElevatorRequest.getToFloor());
@@ -72,7 +71,7 @@ public final class ElevatorControllerEndPoints {
      * @return Elevator user can travel in
      */
     @RequestMapping(value = "/move", method = RequestMethod.PUT)
-    public ResponseEntity<Void> moveElevator(@RequestBody final MoveElevatorRequest moveElevatorRequest) {
+    public ResponseEntity<Void> moveElevator(@Valid @RequestBody final MoveElevatorRequest moveElevatorRequest) {
         log.debug("elevator move rquested {}", moveElevatorRequest);
 
         elevatorController.moveElevator(moveElevatorRequest.getToFloor(), moveElevatorRequest.getElevatorId());
@@ -88,7 +87,8 @@ public final class ElevatorControllerEndPoints {
      * @return Elevator user can travel in
      */
     @RequestMapping(value = "/release", method = RequestMethod.PUT)
-    public ResponseEntity<Void> releaseElevator(@RequestBody final ReleaseElevatorRequest releaseElevatorRequest) {
+    public ResponseEntity<Void> releaseElevator(
+            @Valid @RequestBody final ReleaseElevatorRequest releaseElevatorRequest) {
         log.debug("elevator release rquested {}", releaseElevatorRequest);
 
         elevatorController.releaseElevator(releaseElevatorRequest.getElevatorId());
@@ -102,10 +102,10 @@ public final class ElevatorControllerEndPoints {
      * @return List of all elevators
      */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public List<Elevator> listElevators() {
+    public ResponseEntity<List<Elevator>> listElevators() {
         log.debug("elevators list requested");
 
-        return elevatorController.getElevators();
+        return ResponseEntity.ok().body(elevatorController.getElevators());
     }
 
 }

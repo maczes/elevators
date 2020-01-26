@@ -7,7 +7,7 @@ import Modal from 'react-native-modal';
 import PropTypes from 'prop-types';
 import FloorNumDropdownContainer from '../containers/floor-num-dropdown-container';
 
-const backIcon = require('../assets/icon-back.png');
+const goBackIcon = require('../assets/icon-back.png');
 
 export default class MidGrid extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ export default class MidGrid extends React.Component {
     };
   }
 
-  onGoButtonClicked = () => {
+  onGoButtonClickListener = () => {
     this.toggleModal();
     console.log('requesting elevator to the floor no: ', this.props.fromFloor);
     this.props.onGoButtonClick(this.props.fromFloor, this.props.toFloor);
@@ -39,12 +39,12 @@ export default class MidGrid extends React.Component {
           <TouchableOpacity onPress={this.toggleModal}>
             <Image
               style={styles.modalBackIcon}
-              source={backIcon}
+              source={goBackIcon}
             />
           </TouchableOpacity>
           <View style={styles.dropdownContainer}>
             <FloorNumDropdownContainer />
-            <Button title="Go" style={styles.btn} onPress={this.onGoButtonClicked} />
+            <Button title="Go" style={styles.btn} onPress={this.onGoButtonClickListener} />
           </View>
         </Modal>
       </View>

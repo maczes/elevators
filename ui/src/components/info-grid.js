@@ -28,22 +28,24 @@ const InfoGrid = (props) => {
         <Text>System Activity Monitoring Dashboard</Text>
         <ScrollView
           style={styles.scrollView}
-          key={noticeBoard.lenght}
+          key={noticeBoard.length}
           refreshControl={
             <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
           }
         >
           {noticeBoard.map((item) => (
-            <Text style={styles.text} key={item.datestamp}>
-              <Text>
-                {item.datestamp}
-                {':'}
+            <View key={item.datestamp}>
+              <Text style={styles.text} key={item.datestamp}>
+                <Text>
+                  {item.datestamp}
+                  {':'}
+                </Text>
+                <Text style={styles.reportText}>
+                  {' '}
+                  {item.report}
+                </Text>
               </Text>
-              <Text style={styles.reportText}>
-                {' '}
-                {item.report}
-              </Text>
-            </Text>
+            </View>
           ))}
         </ScrollView>
       </SafeAreaView>
