@@ -2,8 +2,6 @@ package com.tingco.codechallenge.elevator.controller;
 
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-
 import com.tingco.codechallenge.elevator.controller.api.Elevator;
 import com.tingco.codechallenge.elevator.controller.api.ElevatorController;
 import com.tingco.codechallenge.elevator.repository.ElevatorRepository;
@@ -48,7 +46,7 @@ public class ElevatorCotrollerImpl implements ElevatorController {
     @Override
     public void releaseElevator(final int elevatorId) {
         log.debug("releasing {}", elevatorId);
-        
+
         Elevator elevator = elevatorRepository.getElevator(elevatorId);
         elevator.setCurrentFloor(elevator.getAddressedFloor());
         elevator.setBusy(false);
@@ -70,7 +68,7 @@ public class ElevatorCotrollerImpl implements ElevatorController {
     }
 
     private Elevator.Direction calculateDirection(final int toFloor, final int fromFloor) {
-        return toFloor > fromFloor? Elevator.Direction.UP : Elevator.Direction.DOWN;
+        return toFloor > fromFloor ? Elevator.Direction.UP : Elevator.Direction.DOWN;
     }
 
 }

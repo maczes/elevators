@@ -3,6 +3,7 @@ import { floorNumDropdownDataReducer, floorNumDropdownReducer } from './floor-nu
 import { onGoButtonClickReducer } from './mid-grid-reducer';
 import { onLoadElevatorsReducer } from './elevator-grid-reducer';
 import { onPublishActivityReportReducer } from './info-grid-reducer';
+import { onErrorReducer } from './error-handler-reducer';
 
 const combinedReducers = combineReducers({
   floorNumDropdownDataReducer,
@@ -10,6 +11,7 @@ const combinedReducers = combineReducers({
   onGoButtonClickReducer,
   onLoadElevatorsReducer,
   onPublishActivityReportReducer,
+  onErrorReducer,
 });
 
 export default combinedReducers;

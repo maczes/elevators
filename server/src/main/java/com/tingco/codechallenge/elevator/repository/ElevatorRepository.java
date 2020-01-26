@@ -16,6 +16,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class ElevatorRepository {
 
+    private static final int GROUND_FLOOR_OFFSET = 1;
+
     private List<Elevator> elevators = new ArrayList<Elevator>();
 
     @Autowired
@@ -24,7 +26,7 @@ public class ElevatorRepository {
     @PostConstruct
     private void init() {
 
-        for (int i = 0; i <= elevatorProperties.getNumberOfElevators(); i++) {
+        for (int i = 0; i <= elevatorProperties.getNumberOfElevators() - GROUND_FLOOR_OFFSET; i++) {
             elevators.add(ElevatorImpl.builder()
                 .id(i)
                 .addressedFloor(0)

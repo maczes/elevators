@@ -6,10 +6,10 @@ import {
 import { ON_ELEVATOR_GRID_LOAD } from '../actions/elevator-grid-action';
 import {
   ON_GO_BUTTON_CLICK,
-  ON_REQUEST_ELEVATOR_SUCCESS,
+  onRequestElevatorSuccessAction,
 } from '../actions/mid-grid-action';
 import { PUBLISH_ACTIVITY_REPORT } from '../actions/info-grid-action';
-
+import onFailureAction from '../actions/error-handler-action';
 import ApiClient from '../services/api-client';
 
 const apiClient = ApiClient.create();
@@ -23,27 +23,30 @@ export function* onGoButtonClickSaga() {
     const { fromFloor } = action;
     const { toFloor } = action;
 
+    if (fromFloor === toFloor) {
+      yield* publishActivityReport('no action needed, same floors selected');
+      break;
+    }
+
     try {
       const result = yield call(requestElevator, fromFloor);
-      console.log('saga result: ', result);
-
       const eId = result.data.id + groundFloorOffset;
 
-      yield publishActivityReport('elevator requested');
-      yield publishActivityReport(`E${eId} will be in use`);
+      yield* publishActivityReport('elevator requested');
+      yield* publishActivityReport(`E${eId} will be in use`);
 
       if (result.data.currentFloor !== fromFloor) {
         yield* processMoveElevator(fromFloor, eId);
       }
 
-      yield put({ type: ON_REQUEST_ELEVATOR_SUCCESS, elevator: result.data });
+      yield put(onRequestElevatorSuccessAction(result.data));
 
       yield* processMoveElevator(toFloor, eId);
-
-      yield publishActivityReport(`task done. E${eId} enters the ready state`);
+      yield* publishActivityReport(`task done. E${eId} enters the ready state`);
     } catch (err) {
-      console.error('err in saga: ', err);
-      // yield put(loginFailure(err));
+      // console.error('err:mid-grid-saga ', err);
+      // Note: every console.error log causes app crash ... wtf
+      yield put(onFailureAction(err));
     }
   }
 }
