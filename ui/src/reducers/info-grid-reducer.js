@@ -12,10 +12,11 @@ export function onPublishActivityReportReducer(noticeBoard = {
   switch (action.type) {
     case PUBLISH_ACTIVITY_REPORT: {
       console.log('PUBLISH_ACTIVITY_REPORT detected');
-      const reportss = noticeBoard.reports;
-      reportss.unshift({ datestamp: getDate(), report: action.report });
+      const reportList = noticeBoard.reports;
+      reportList.unshift({ datestamp: getDate(), report: action.report });
       const r = toggleRefresh(noticeBoard.refresh);
-      return { reports: reportss, refresh: r };
+
+      return { reports: reportList, refresh: r };
     }
     default:
       return noticeBoard;
