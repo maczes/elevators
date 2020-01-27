@@ -8,6 +8,7 @@ import {
 const mapStateToProps = (state) => {
   const newState = {
     noticeBoard: state.onPublishActivityReportReducer.reports,
+    refresh: state.onPublishActivityReportReducer.refresh,
   };
   console.info(`info-grid reducer state  : ${JSON.stringify(newState)}`);
   return newState;

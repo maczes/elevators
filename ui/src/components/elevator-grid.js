@@ -7,34 +7,29 @@ import {
   Table, TableWrapper, Col, Cols, Cell,
 } from 'react-native-table-component';
 import PropTypes from 'prop-types';
-
+import Spinner from 'react-native-loading-spinner-overlay';
 
 export default class ElevatorGrid extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      isLoading: true,
-    };
-
     props.onElevatorGridLoad();
   }
 
-  loadData() {
-    try {
-      this.props.onElevatorGridLoad();
-
-      const newState = { ...this.state, isLoading: false };
-
-      this.setState(newState);
-    } catch (error) {
-      console.error(error);
-    }
+  componentWillMount() {
+    setTimeout(() => {
+      console.log('indicator timeout');
+      this.props.isLoading = false;
+    }, 3000);
   }
 
+  cancelable = () => true
+
   render() {
-    if (this.props.isLoading) {
+    const { isLoading, rowTitle, tableData } = this.props;
+
+    if (isLoading) {
       console.info('loading activity indicator');
+
       return (
         <View style={styles.indicator}>
           <ActivityIndicator />
@@ -51,7 +46,7 @@ export default class ElevatorGrid extends React.Component {
             <TableWrapper style={styles.wrapperLeftRows}>
               <Col data={['F']} style={styles.head} textStyle={styles.text} />
               <Col
-                data={this.props.rowTitle}
+                data={rowTitle}
                 style={styles.title}
                 heightArr={[30, 30, 30, 30, 30, 30, 30, 30]}
                 textStyle={styles.titleText}
@@ -62,7 +57,7 @@ export default class ElevatorGrid extends React.Component {
           {/* Right Wrapper */}
           <TableWrapper style={styles.wrapperRight}>
             <Cols
-              data={this.props.tableData}
+              data={tableData}
               heightArr={[40, 30, 30, 30, 30, 30, 30, 30]}
               style={styles.title}
               textStyle={styles.text}
@@ -86,8 +81,7 @@ ElevatorGrid.propTypes = {
 const singleHeadBgColor = '#c8e1ff';
 const headBgColor = '#c8e1ff';
 const titleBgColor = '#f6f8fa';
-// const colHeaderBgColor = '#c8e1ff';
-// const rowHeaderBgColor = '#b4e8d7';
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -103,14 +97,6 @@ const styles = StyleSheet.create({
   titleText: { marginRight: 0, textAlign: 'center' },
   // above: elevators IDs cell text style;
   text: { textAlign: 'center' },
-  // colHeader: {
-  //   flex: 1, backgroundColor: colHeaderBgColor, textAlign: 'center', paddingTop: 10,
-  // },
-  // rowHeader: {
-  //   flex: 1, backgroundColor: rowHeaderBgColor,
-  // },
-  // elevatorCell: { flex: 1, backgroundColor: '#ffcccc', textAlign: 'center' },
-  // headerText: { textAlign: 'center' },
   wrapperLeft: { width: 60 },
   wrapperLeftRows: { flexDirection: 'row' },
   wrapperRight: { flex: 1, flexDirection: 'column' },

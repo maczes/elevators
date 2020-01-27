@@ -1,13 +1,13 @@
 /* eslint-disable import/prefer-default-export */
 import {
-  put, delay, take, call,
+  put, take, call,
 } from 'redux-saga/effects';
 import ApiClient from '../services/api-client';
-
 import {
   ON_ELEVATOR_GRID_LOAD,
   onRequestElevatorListSuccessAction,
 } from '../actions/elevator-grid-action';
+import { onFailureAction } from '../actions/error-handler-action';
 
 const apiClient = ApiClient.create();
 
@@ -24,10 +24,15 @@ export function* onElevatorListLoadSaga() {
     try {
       const result = yield call(requestElevators);
 
+      if (result.problem) {
+        yield put(onFailureAction(result.problem));
+        break;
+      }
+
       yield put(onRequestElevatorListSuccessAction(result.data));
-      yield delay(2000);
-    } catch (err) {
-      console.error('err in saga: ', err);
+    } catch (error) {
+      console.log('err:elevator-grid-saga ', error);
+      yield put(onFailureAction('Im sorry try again'));
     }
   }
 }

@@ -1,22 +1,19 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-use-before-define */
 import React from 'react';
 import {
-  StyleSheet, Text, SafeAreaView, ScrollView, View, RefreshControl,
+  StyleSheet, Text, View, FlatList,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import { color } from 'react-native-material-design-styles';
 
-function wait(timeout) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, timeout);
-  });
-}
+const colorStyle = StyleSheet.create(color);
 
 const InfoGrid = (props) => {
   const [refreshing, setRefreshing] = React.useState(false);
 
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
-
     wait(2000).then(() => setRefreshing(false));
   }, [refreshing]);
 
@@ -24,31 +21,16 @@ const InfoGrid = (props) => {
 
   return (
     <View style={styles.container}>
-      <SafeAreaView style={styles.container}>
-        <Text>System Activity Monitoring Dashboard</Text>
-        <ScrollView
-          style={styles.scrollView}
-          key={noticeBoard.length}
-          refreshControl={
-            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-          }
-        >
-          {noticeBoard.map((item) => (
-            <View key={item.datestamp}>
-              <Text style={styles.text} key={item.datestamp}>
-                <Text>
-                  {item.datestamp}
-                  {':'}
-                </Text>
-                <Text style={styles.reportText}>
-                  {' '}
-                  {item.report}
-                </Text>
-              </Text>
-            </View>
-          ))}
-        </ScrollView>
-      </SafeAreaView>
+      <Text>System Activity Monitoring Dashboard</Text>
+      <FlatList
+        data={noticeBoard}
+        renderItem={({ item }) => <Row item={item} />}
+        keyExtractor={(item) => item.datestamp}
+        refreshing={refreshing}
+        onRefresh={onRefresh}
+        style={styles.scrollView}
+        extraData={() => true}
+      />
     </View>
   );
 };
@@ -69,34 +51,40 @@ const styles = StyleSheet.create({
     backgroundColor: bgColor,
     marginHorizontal: 0,
   },
-  text: {
-    flex: 1,
-    fontSize: 12,
-  },
   reportText: {
     flex: 1,
-    fontSize: 12,
-    fontWeight: 'bold',
+    fontSize: 14,
+  },
+  reportText2: {
+    flex: 1,
+    fontSize: 14,
+    backgroundColor: colorStyle.paperGrey200.color,
   },
 });
 
-// export default class InfoGrid extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
+function Row({ item }) {
+  let reportTextStyle = styles.reportText;
+  if (item.report.startsWith('elevator requested')) {
+    reportTextStyle = styles.reportText2;
+  }
+  return (
+    <View key={item.datestamp}>
+      <Text style={reportTextStyle} key={item.datestamp}>
+        <Text>
+          {item.datestamp}
+          {':'}
+        </Text>
+        <Text style={reportTextStyle}>
+          {' '}
+          {item.report}
+        </Text>
+      </Text>
+    </View>
+  );
+}
 
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <SafeAreaView style={styles.container}>
-//           <Text>System Activity Monitoring Dashboard</Text>
-//           <ScrollView style={styles.scrollView}>
-//             <Text style={styles.text}>
-//               {this.props.noticeBoard}
-//             </Text>
-//           </ScrollView>
-//         </SafeAreaView>
-//       </View>
-//     );
-//   }
-// }
+function wait(timeout) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, timeout);
+  });
+}

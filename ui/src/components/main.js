@@ -1,27 +1,31 @@
 /* eslint-disable no-use-before-define */
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { color } from 'react-native-material-design-styles';
 import MidGridContainer from '../containers/mid-grid-container';
 import ElevatorGridContainer from '../containers/elevator-grid-container';
 import InfoGridContainer from '../containers/info-grid-container';
-import ErrorHandler from '../errors/error-handler';
+import ErrorHandlerContainer from '../containers/error-handler-container';
+
+const colorStyle = StyleSheet.create(color);
 
 export default function Main() {
   return (
     <View style={styles.topContainer}>
-      <ErrorHandler>
-        <View style={styles.elevatorGridContainer}>
-          <Text>Elevator Simulator</Text>
-          <Text>-------------------------</Text>
-          <ElevatorGridContainer />
-        </View>
-        <View style={styles.midGridContainer}>
-          <MidGridContainer />
-        </View>
-        <View style={styles.infoGridContainer}>
-          <InfoGridContainer />
-        </View>
-      </ErrorHandler>
+      <View style={styles.elevatorGridContainer}>
+        <Text>Elevator Simulator</Text>
+        <Text>-------------------------</Text>
+        <ElevatorGridContainer />
+      </View>
+      <View style={styles.midGridContainer}>
+        <MidGridContainer />
+      </View>
+      <View style={styles.infoGridContainer}>
+        <InfoGridContainer />
+      </View>
+      <View style={styles.errorHandlerContainter}>
+        <ErrorHandlerContainer />
+      </View>
     </View>
   );
 }
@@ -60,29 +64,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
   },
+  errorHandlerContainter: {
+    flex: 0,
+    maxHeight: '5%',
+    backgroundColor: colorStyle.paperGrey50.color,
+  },
 });
-
-
-// export default class Main extends React.Component {
-//   render() {
-//     return (
-//       <View style={styles.topContainer}>
-
-//         <View style={styles.elevatorGridContainer}>
-//           <Text>Elevator Simulator</Text>
-//           <Text>-------------------------</Text>
-//           <ElevatorGridContainer />
-//         </View>
-
-//         <View style={styles.midGridContainer}>
-//           <MidGridContainer />
-//         </View>
-
-//         <View style={styles.infoGridContainer}>
-//           <InfoGridContainer />
-//         </View>
-
-//       </View>
-//     );
-//   }
-// }

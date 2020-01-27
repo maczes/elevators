@@ -13,7 +13,9 @@ export default class Dropdown extends React.Component {
   }
 
   render() {
-    const { data } = this.props;
+    const {
+      request, onFromFloorClick, onToFloorClick, data,
+    } = this.props;
 
     return (
       <View style={styles.container}>
@@ -28,13 +30,13 @@ export default class Dropdown extends React.Component {
 
           handler={(selection, row) => {
             if (selection === 0) {
-              this.props.onFromFloorClick({
+              onFromFloorClick({
                 fromFloor: data[selection][row],
-                toFloor: this.props.request.floorTo,
+                toFloor: request.floorTo,
               });
             } else if (selection === 1) {
-              this.props.onToFloorClick({
-                fromFloor: this.props.request.fromFloor,
+              onToFloorClick({
+                fromFloor: request.fromFloor,
                 toFloor: data[selection][row],
               });
             } else {
@@ -48,12 +50,12 @@ export default class Dropdown extends React.Component {
             <Text>
               from floor:
               {' '}
-              {this.props.request.fromFloor}
+              {request.fromFloor}
             </Text>
             <Text>
               to floor:
               {' '}
-              {this.props.request.toFloor}
+              {request.toFloor}
             </Text>
           </View>
 
@@ -67,9 +69,7 @@ Dropdown.propTypes = {
   loadDropdownData: PropTypes.func.isRequired,
   resetComponent: PropTypes.func.isRequired,
   data: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired,
-  // fromFloor: PropTypes.number.isRequired,
   onFromFloorClick: PropTypes.func.isRequired,
-  // floorTo: PropTypes.number.isRequired,
   onToFloorClick: PropTypes.func.isRequired,
   request: PropTypes.objectOf(PropTypes.number).isRequired,
 };
