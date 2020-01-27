@@ -5,6 +5,8 @@ import {
 } from '../actions/elevator-grid-action';
 import AppConfig from '../config/app-config';
 
+const ELEVATOR_FIX_NUMBER = 1;
+
 export function onLoadElevatorsReducer(state = {
   tableData: [], rowTitle: [], isLoading: true,
 }, action) {
@@ -33,42 +35,51 @@ const buildRowTitle = () => {
 };
 
 const processElevators = (elevatorList) => {
+  const FLOOR_NUMBER_OFFSET = 2; // one row for header, and one for ground floor (level 0)
+  const FIXED_NUMBER_OF_FLOORS = AppConfig.NUMBER_OF_FLOORS + FLOOR_NUMBER_OFFSET;
+
   const elevators = elevatorList.map((c) => ({
     id: c.id,
     currentFloor: c.currentFloor,
   }));
 
-  const tableDataArr = [Array(AppConfig.NUMBER_OF_ELEVATORS).keys()]
-    .map((x) => {
-      const FLOOR_NUMBER_OFFSET = 2; // one row for header, and one for ground floor (level 0)
-      const FIXED_NUMBER_OF_FLOORS = AppConfig.NUMBER_OF_FLOORS + FLOOR_NUMBER_OFFSET;
-      const rows = [];
-
-      for (const key of x) {
-        const row = Array(FIXED_NUMBER_OF_FLOORS)
-          .fill(`E${key + 1}`, 0, 1)
-          .fill('', 1, FIXED_NUMBER_OF_FLOORS);
-
-        const e = elevators.filter((obj) => obj.id === key);
-
-        if (e) {
-          e.map((z) => {
-            const toIdx = Number(FIXED_NUMBER_OF_FLOORS - (z.currentFloor));
-            const fromIdx = Number(FIXED_NUMBER_OF_FLOORS - (z.currentFloor + 1));
-            row.fill(elevatorMark, fromIdx, toIdx);
-            return z;
-          });
-          rows[key] = row;
-        } else {
-          rows[key] = Array(FIXED_NUMBER_OF_FLOORS)
-            .fill(`F${key}`, 0, 1)
-            .fill('', 1, FIXED_NUMBER_OF_FLOORS);
-        }
-      }
-      return rows;
-    })[0];
-
-  return tableDataArr;
+  return [Array(AppConfig.NUMBER_OF_ELEVATORS).keys()]
+    .map((it) => buildRows(it, FIXED_NUMBER_OF_FLOORS, elevators))[0];
 };
 
-const elevatorMark = 'X';
+function buildRows(iterator, numberOfFloors, elevators) {
+  const rows = [];
+
+  // eslint-disable-next-line no-restricted-syntax
+  for (const key of iterator) {
+    const elevatorsFoundOnTheFloor = elevators.filter((obj) => obj.id === key);
+
+    if (elevatorsFoundOnTheFloor) {
+      rows[key] = buildElevatorRow(`E${key + ELEVATOR_FIX_NUMBER}`, numberOfFloors, elevatorsFoundOnTheFloor);
+    } else {
+      rows[key] = buildRow(`F${key}`, numberOfFloors);
+    }
+  }
+  return rows;
+}
+
+function buildRow(header, length) {
+  return Array(length)
+    .fill(header, 0, 1)
+    .fill('', 1, length);
+}
+function buildElevatorRow(header, numberOfFloors, elevators) {
+  const row = buildRow(header, numberOfFloors);
+  const elevatorMarker = 'X';
+
+  elevators.map((elevator) => {
+    const toIdx = Number(numberOfFloors - (elevator.currentFloor));
+    const fromIdx = Number(numberOfFloors - (elevator.currentFloor + ELEVATOR_FIX_NUMBER));
+
+    row.fill(elevatorMarker, fromIdx, toIdx);
+
+    return elevator;
+  });
+
+  return row;
+}

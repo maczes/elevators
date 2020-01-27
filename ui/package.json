@@ -1,7 +1,7 @@
 {
   "name": "react-native-elevators",
   "jest": {
-    "verbose": true,
+    "verbose": false,
     "transformIgnorePatterns": [
       "/node_modules/",
       "node_modules/"
