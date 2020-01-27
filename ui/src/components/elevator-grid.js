@@ -7,6 +7,7 @@ import {
   Table, TableWrapper, Col, Cols, Cell,
 } from 'react-native-table-component';
 import PropTypes from 'prop-types';
+import Spinner from 'react-native-loading-spinner-overlay';
 
 export default class ElevatorGrid extends React.Component {
   constructor(props) {
@@ -14,11 +15,21 @@ export default class ElevatorGrid extends React.Component {
     props.onElevatorGridLoad();
   }
 
+  componentWillMount() {
+    setTimeout(() => {
+      console.log('indicator timeout');
+      this.props.isLoading = false;
+    }, 3000);
+  }
+
+  cancelable = () => true
+
   render() {
     const { isLoading, rowTitle, tableData } = this.props;
 
     if (isLoading) {
       console.info('loading activity indicator');
+
       return (
         <View style={styles.indicator}>
           <ActivityIndicator />

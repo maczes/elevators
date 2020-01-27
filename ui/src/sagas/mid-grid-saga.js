@@ -1,15 +1,15 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable no-use-before-define */
 import {
-  put, delay, take, call,
+  put, delay, take, call, cancelled, cancel,
 } from 'redux-saga/effects';
-import { ON_ELEVATOR_GRID_LOAD } from '../actions/elevator-grid-action';
+import { onElevatorGridLoadAction } from '../actions/elevator-grid-action';
 import {
   ON_GO_BUTTON_CLICK,
   onRequestElevatorSuccessAction,
 } from '../actions/mid-grid-action';
-import { PUBLISH_ACTIVITY_REPORT } from '../actions/info-grid-action';
-import onFailureAction from '../actions/error-handler-action';
+import { onPublishActivityReportAction } from '../actions/info-grid-action';
+import { onFailureAction } from '../actions/error-handler-action';
 import ApiClient from '../services/api-client';
 
 const apiClient = ApiClient.create();
@@ -25,14 +25,15 @@ export function* onGoButtonClickSaga() {
 
     if (fromFloor === toFloor) {
       yield* publishActivityReport('no action needed, same floors selected');
-      break;
+      break; // TODO: this will breake saga for good. Fire out something else
     }
 
     try {
       const result = yield call(requestElevator, fromFloor);
       const eId = result.data.id + groundFloorOffset;
 
-      yield* publishActivityReport('elevator requested');
+      yield* publishActivityReport('elevator requested. Nearest shaft is calculated');
+      yield delay(1500); // note: with * this looks to run in the background
       yield* publishActivityReport(`E${eId} will be in use`);
 
       if (result.data.currentFloor !== fromFloor) {
@@ -43,10 +44,9 @@ export function* onGoButtonClickSaga() {
 
       yield* processMoveElevator(toFloor, eId);
       yield* publishActivityReport(`task done. E${eId} enters the ready state`);
-    } catch (err) {
-      // console.error('err:mid-grid-saga ', err);
-      // Note: every console.error log causes app crash ... wtf
-      yield put(onFailureAction(err));
+    } catch (error) {
+      console.error('err:mid-grid-saga ', error);
+      yield put(onFailureAction('err:mid-grid-saga'));
     }
   }
 }
@@ -56,8 +56,8 @@ function* processMoveElevator(toFloor, eId) {
   yield publishActivityReport(`E${eId} is moving to ${toFloor}`);
   yield delay(3000); // this is to simulate move of the elevator
   yield call(releaseElevator, eId - groundFloorOffset);
+  yield put(onElevatorGridLoadAction());
   yield publishActivityReport(`E${eId} arrived to ${toFloor}`);
-  yield put({ type: ON_ELEVATOR_GRID_LOAD });
 }
 
 function requestElevator(floor) {
@@ -79,5 +79,6 @@ function releaseElevator(elevatorId) {
 }
 
 function* publishActivityReport(report) {
-  yield put({ type: PUBLISH_ACTIVITY_REPORT, report });
+  yield put(onPublishActivityReportAction(report));
+  yield delay(1000);
 }

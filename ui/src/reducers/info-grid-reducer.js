@@ -6,13 +6,17 @@ import {
 } from '../actions/info-grid-action';
 
 export function onPublishActivityReportReducer(noticeBoard = {
-  reports: [{ datestamp: getDate(), report: 'elevators ready' }],
+  reports: [{ datestamp: '', report: '' }],
+  refresh: false,
 }, action) {
   switch (action.type) {
-    case PUBLISH_ACTIVITY_REPORT:
+    case PUBLISH_ACTIVITY_REPORT: {
       console.log('PUBLISH_ACTIVITY_REPORT detected');
-      noticeBoard.reports.push({ datestamp: getDate(), report: action.report });
-      return noticeBoard;
+      const reportss = noticeBoard.reports;
+      reportss.unshift({ datestamp: getDate(), report: action.report });
+      const r = toggleRefresh(noticeBoard.refresh);
+      return { reports: reportss, refresh: r };
+    }
     default:
       return noticeBoard;
   }
@@ -22,3 +26,5 @@ let getDate = () => {
   const dt = DateTime.local();
   return dt.toFormat('HH:mm:ss.SSS');
 };
+
+const toggleRefresh = (refresh) => !refresh;
