@@ -7,7 +7,7 @@ import Modal from 'react-native-modal';
 import PropTypes from 'prop-types';
 import FloorNumDropdownContainer from '../containers/floor-num-dropdown-container';
 
-const goBackIcon = require('../assets/icon-back.png');
+const goBackIcon = require('../../assets/icon-back.png');
 
 export default class MidGrid extends React.Component {
   constructor(props) {

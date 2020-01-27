@@ -11,7 +11,6 @@ const mapStateToProps = (state) => {
     rowTitle: state.onLoadElevatorsReducer.rowTitle,
     isLoading: state.onLoadElevatorsReducer.isLoading,
   };
-  // console.info(`elevator-grid reducer state  : ${JSON.stringify(newState)}`);
 
   return newState;
 };

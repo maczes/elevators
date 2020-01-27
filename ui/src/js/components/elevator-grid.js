@@ -7,7 +7,6 @@ import {
   Table, TableWrapper, Col, Cols, Cell,
 } from 'react-native-table-component';
 import PropTypes from 'prop-types';
-import Spinner from 'react-native-loading-spinner-overlay';
 
 export default class ElevatorGrid extends React.Component {
   constructor(props) {

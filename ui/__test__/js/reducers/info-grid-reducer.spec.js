@@ -1,27 +1,36 @@
 /* eslint-disable no-use-before-define */
-import { DateTime } from 'luxon';
-import { onPublishActivityReportReducer } from '../../src/reducers/info-grid-reducer';
+import {
+  DateTime,
+} from 'luxon';
+import {
+  onPublishActivityReportReducer,
+} from '../../../src/js/reducers/info-grid-reducer';
 import {
   PUBLISH_ACTIVITY_REPORT,
-} from '../../src/actions/info-grid-action';
+} from '../../../src/js/actions/info-grid-action';
 
 describe(':spec:onPublishActivityReportReducer', () => {
   it('check reducer is OK for PUBLISH_ACTIVITY_REPORT action ', () => {
     // given
     const testReport = 'this is my brand new test report';
+    const expectedTestReportId = 0; // 0 since we add to the front of the list
     const state = {
-      reports: [{ datestamp: getDate(), report: 'initial report' }],
+      reports: [{
+        datestamp: getDate(),
+        report: 'initial report',
+      }],
       refresh: false,
     };
 
     // when
     const newState = onPublishActivityReportReducer(state, {
-      type: PUBLISH_ACTIVITY_REPORT, report: testReport,
+      type: PUBLISH_ACTIVITY_REPORT,
+      report: testReport,
     });
 
     // then
     expect(newState.reports.length).toEqual(2);
-    expect(newState.reports[0].report).toEqual(testReport); // 0 since we add to the front of the list
+    expect(newState.reports[expectedTestReportId].report).toEqual(testReport); 
     expect(newState.refresh).toEqual(!state.refresh);
   });
 });
