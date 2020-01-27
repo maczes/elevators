@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable no-use-before-define */
 import {
-  put, delay, take, call, cancelled, cancel,
+  put, delay, take, call,
 } from 'redux-saga/effects';
 import { onElevatorGridLoadAction } from '../actions/elevator-grid-action';
 import {
@@ -15,6 +15,11 @@ import ApiClient from '../services/api-client';
 const apiClient = ApiClient.create();
 const groundFloorOffset = 1;
 
+/**
+ * Main saga responsible for asynchronous elevator stering.
+ * Note:
+ * - delays added in order to make it more realistic
+ */
 export function* onGoButtonClickSaga() {
   console.log('onGoButtonClickSaga');
 
@@ -54,7 +59,7 @@ export function* onGoButtonClickSaga() {
 function* processMoveElevator(toFloor, eId) {
   yield call(moveElevator, eId - groundFloorOffset, toFloor);
   yield publishActivityReport(`E${eId} is moving to ${toFloor}`);
-  yield delay(3000); // this is to simulate move of the elevator
+  yield delay(3000);
   yield call(releaseElevator, eId - groundFloorOffset);
   yield put(onElevatorGridLoadAction());
   yield publishActivityReport(`E${eId} arrived to ${toFloor}`);

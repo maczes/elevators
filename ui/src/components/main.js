@@ -70,28 +70,3 @@ const styles = StyleSheet.create({
     backgroundColor: colorStyle.paperGrey50.color,
   },
 });
-
-
-// export default class Main extends React.Component {
-//   render() {
-//     return (
-//       <View style={styles.topContainer}>
-
-//         <View style={styles.elevatorGridContainer}>
-//           <Text>Elevator Simulator</Text>
-//           <Text>-------------------------</Text>
-//           <ElevatorGridContainer />
-//         </View>
-
-//         <View style={styles.midGridContainer}>
-//           <MidGridContainer />
-//         </View>
-
-//         <View style={styles.infoGridContainer}>
-//           <InfoGridContainer />
-//         </View>
-
-//       </View>
-//     );
-//   }
-// }

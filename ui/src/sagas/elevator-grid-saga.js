@@ -8,7 +8,6 @@ import {
   onRequestElevatorListSuccessAction,
 } from '../actions/elevator-grid-action';
 import { onFailureAction } from '../actions/error-handler-action';
-// import { onPublishActivityReportAction } from '../actions/info-grid-action';
 
 const apiClient = ApiClient.create();
 
@@ -31,7 +30,6 @@ export function* onElevatorListLoadSaga() {
       }
 
       yield put(onRequestElevatorListSuccessAction(result.data));
-      // yield put(onPublishActivityReportAction('Elevators are ready'));
     } catch (error) {
       console.log('err:elevator-grid-saga ', error);
       yield put(onFailureAction('Im sorry try again'));

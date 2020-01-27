@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-use-before-define */
 import React from 'react';
 import {
@@ -38,7 +39,6 @@ export default InfoGrid;
 
 InfoGrid.propTypes = {
   noticeBoard: PropTypes.arrayOf(PropTypes.object).isRequired,
-  // item: PropTypes.objectOf.isRequired,
 };
 
 const bgColor = 'white';
@@ -53,14 +53,12 @@ const styles = StyleSheet.create({
   },
   reportText: {
     flex: 1,
-    fontSize: 12,
-    fontWeight: 'bold',
+    fontSize: 14,
   },
   reportText2: {
     flex: 1,
-    fontSize: 12,
-    fontWeight: 'bold',
-    backgroundColor: colorStyle.paperGrey100.color,
+    fontSize: 14,
+    backgroundColor: colorStyle.paperGrey200.color,
   },
 });
 
@@ -76,7 +74,6 @@ function Row({ item }) {
           {item.datestamp}
           {':'}
         </Text>
-        {/*  */}
         <Text style={reportTextStyle}>
           {' '}
           {item.report}
