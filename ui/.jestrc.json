@@ -1,0 +1,58 @@
+
+    {
+      "automock": false,
+      "browser": false,
+      "cache": true,
+      "cacheDirectory": "/private/var/folders/5r/c6kwxq156m1c628dr5d_vbmcq1htbl/T/jest_csfm2b",
+      "clearMocks": false,
+      "coveragePathIgnorePatterns": [
+        "/node_modules/"
+      ],
+      "errorOnDeprecated": false,
+      "extraGlobals": [],
+      "forceCoverageMatch": [],
+      "globals": {},
+      "haste": {
+        "computeSha1": false,
+        "providesModuleNodeModules": [],
+        "throwOnModuleCollision": false
+      },
+      "moduleDirectories": [
+        "node_modules"
+      ],
+      "moduleFileExtensions": [
+        "js",
+        "json",
+        "jsx",
+        "ts",
+        "tsx",
+        "node"
+      ],
+      "modulePathIgnorePatterns": [],
+      "name": "e4eafe013f8f8d59293c02b3a9e6f2d9",
+      "prettierPath": "prettier",
+      "resetMocks": false,
+      "resetModules": false,
+      "restoreMocks": false, 
+      "runner": "jest-runner",
+      "setupFiles": [],
+      "setupFilesAfterEnv": [
+        "./__tests__/jest.setup.js",
+        "./node_modules/expect-more-jest/dist/index.js"
+      ],
+      "skipFilter": false,
+      "snapshotSerializers": [],
+      "testEnvironmentOptions": {},
+      "testLocationInResults": false,
+      "testMatch": [
+        "**/?(*.)+(spec|test).[tj]s?(x)"
+      ],
+      "testPathIgnorePatterns": [
+        "/node_modules/"
+      ],
+      "testRegex": [],
+      "testURL": "http://localhost",
+      "timers": "real",
+      "verbose": true
+    }
+  

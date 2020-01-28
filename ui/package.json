@@ -1,17 +1,10 @@
 {
   "name": "react-native-elevators",
-  "jest": {
-    "verbose": false,
-    "transformIgnorePatterns": [
-      "/node_modules/",
-      "node_modules/"
-    ]
-  },
   "scripts": {
     "android": "react-native run-android",
     "lint": "eslint src/**/*.js",
-    "test": "jest",
-    "coverage": "jest --coverage",
+    "test": "jest --config=.jestrc.json --rootDir .",
+    "coverage": "jest --config=.jestrc.json --rootDir . --coverage",
     "install-deps": "npm install"
   },
   "dependencies": {
@@ -20,6 +13,7 @@
     "canvas": "^2.6.1",
     "eslint-plugin-react-hooks": "^2.3.0",
     "expo": "^34.0.1",
+    "jetifier": "^1.6.5",
     "luxon": "^1.21.3",
     "prop-types": "^15.7.2",
     "react": "16.8.3",
@@ -54,6 +48,7 @@
     "@babel/plugin-transform-react-jsx": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
+    "@types/jest": "^25.1.0",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
@@ -63,6 +58,7 @@
     "babel-preset-expo": "^6.0.0",
     "babel-preset-react-native": "^4.0.1",
     "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-import-resolver-alias": "^1.1.2",
@@ -70,11 +66,12 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-native": "^3.8.1",
+    "expect-more-jest": "^4.0.0",
     "jest": "^25.1.0",
+    "jest-config": "^25.1.0",
     "react-addons-test-utils": "^15.6.2",
     "react-native-config-node": "0.0.2",
     "react-test-renderer": "^16.12.0",
     "redux-mock-store": "^1.5.4"
-  },
-  "private": true
+  }
 }
