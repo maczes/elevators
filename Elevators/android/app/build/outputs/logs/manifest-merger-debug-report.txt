@@ -1,0 +1,512 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:1:1-48:12
+MERGED from [:react-native-screens] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-reanimated] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-gesture-handler] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-permissions] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-permissions/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-react-native-adapter] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.react:react-native:0.61.5] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/138ae4a965be9fc327cb68c844f5d8ff/AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.android.material:material:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/ad833239fb074ff466e902640fb53c5b/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/a1d4193bf4a6cb4ffa185a56802c09ae/AndroidManifest.xml:17:1-24:12
+MERGED from [:expo-app-loader-provider] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-app-loader-provider/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-constants] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-constants/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-error-recovery] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-error-recovery/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-30:12
+MERGED from [:expo-font] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-font/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-keep-awake] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-keep-awake/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-linear-gradient] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-location] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-21:12
+MERGED from [:expo-sqlite] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-sqlite/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:expo-web-browser] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-web-browser/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-barcode-scanner-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-barcode-scanner-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-camera-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-camera-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-constants-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-constants-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-face-detector-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-face-detector-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-file-system-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-file-system-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-font-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-font-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-permissions-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-permissions-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-task-manager-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-task-manager-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-core] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/@unimodules/core/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-image-loader-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-image-loader-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:unimodules-sensors-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-sensors-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [org.webkit:android-jsc:r245459] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/android-jsc-r245459.aar/462a7ce3e355951ffe19ff25fcd6ad84/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-16.0.0.aar/5781e1072f34ccd9f2a6a16179c82ada/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/9f539377599cb953bef1484d90188814/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-16.0.0.aar/197eb53841568ef5721359680b00d667/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-tasks-16.0.1.aar/9456cdc4eec15e84d9324f079e1d0fec/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/6e86ed8940373ac26fb25999dd868a26/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/6510863e7fe0a7e57c6ce44e81624abc/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.browser:browser:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/browser-1.0.0.aar/01d73012dc109f30f4d9cd49618402a7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0.aar/7257f00350496717ad6c97247da6ca51/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/5ae20893123da8cdcb62ff8bd392233b/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/3ce712fc91736e860cf9f1d5bd7bec5c/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/transition-1.1.0.aar/169fc9a672e2b40e8a713d566009cc49/AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fresco:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/fresco-2.0.0.aar/96aa35f637f5df9b7cfeb5684bc165cd/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-2.0.0.aar/25efb6b7f8690c1abd80a65183621792/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/drawee-2.0.0.aar/ee3f3217b5cfbbdaac6f0f7f7b65c9ea/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/nativeimagefilters-2.0.0.aar/d63c7adf344dc55691bed4899b0a67ef/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/imagepipeline-2.0.0.aar/5f261d3da01d6b0c7c731aee1cd47532/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/nativeimagetranscoder-2.0.0.aar/9ea3447b008a40e3916c1a9db8ecd2b4/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-2.0.0.aar/2690f12b54ccf9031b1df89e8a0a9a12/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.6.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/db142546b236b7b4ecbe7953c4087fa6/AndroidManifest.xml:2:1-13:12
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/eb55a3806f62e315c29e936448bd447f/AndroidManifest.xml:2:1-12:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/99098ecb8e2aa34d2b94bf4b9d27dc0d/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/41556c0d386272bc4fe6fd5ad3da2de7/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/appcompat-resources-1.1.0.aar/6709ceffc1e9cdaae2cd5cc7ba6feeb7/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/0ef32125fea70fda5241467707994435/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/0926f5de4d8ac8a60ec4bc10ddad8380/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/2e756560360da002a4176962044c3d11/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/fa1135ed664e42a5c75c604ec2d3ba34/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/a8e9995ca236d5326c85d9c05c201ee5/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/media-1.0.0.aar/6711ea3f2743f86ca941576ebc1984a8/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/fbdd40701bb6e7bf329ece8221d7caf6/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/a1b0d1bbfbe99324058bf54fb6d5a07e/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.1.0.aar/49f8fee49a44d7a4c3add86f216c9bb1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.1.0.aar/29d8e6df7099e6fba3c568dc49abdf3a/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/e797ac6c541ad5518d5b1113f2c183e9/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/09af5d75913df2d33911badc7c6985fd/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/71690fc94cc9f57d4ad69b670890e763/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/e70c9912a1ce33725a3c69cc34b6a271/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/bc63423fe1c2cb268eda6734918b64b7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/1dca7b4794450bea5e24f992d40696e7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/e6368b13e7ebe590598aae3d175e0df1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/21b9ea4eeadbc549ec2ee6dc600452bd/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/b26e567049c2d2fcd7ecc3c61a923200/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/49cab2630fca462646fac2c30d2b6a4f/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.1.0.aar/ad0a059c11f12c7ed36963b2c317bf47/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/1dcea7bed86563de1b1bc882d681721f/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/1901805ab771ff94afcd394661d46086/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/12b1ccc8b7da1d8fab7edfe21a6d6b8a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/b2e0d245214c87d37f63f0fbb5714d87/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/10f6924ec0a00e193b4e607f983891c0/AndroidManifest.xml:17:1-22:12
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:2:1-30:12
+MERGED from [com.facebook.fresco:fbcore:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-fbcore-2.0.0.aar/eb5d7fd14cf2b9130046f4a473198d97/AndroidManifest.xml:2:1-9:12
+INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:1:1-48:12
+INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:1:1-48:12
+	package
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:2:5-28
+		INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:1:1-48:12
+		INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:1:1-48:12
+		INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:4:5-67
+MERGED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-67
+MERGED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-67
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:4:22-64
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:5:5-77
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:5:22-75
+uses-permission#android.permission.MANAGE_DOCUMENTS
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:8:5-75
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:8:22-72
+uses-permission#android.permission.READ_INTERNAL_STORAGE
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:9:5-80
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:9:22-77
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:10:5-75
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:10:22-72
+uses-permission#android.permission.USE_FINGERPRINT
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:11:5-74
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:11:22-71
+uses-permission#android.permission.VIBRATE
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:12:5-66
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:12:22-63
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:13:5-80
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:13:22-77
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:16:5-81
+MERGED from [:expo-location] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-81
+MERGED from [:expo-location] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-81
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:12:5-81
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:16:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:17:5-79
+MERGED from [:expo-location] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-79
+MERGED from [:expo-location] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-79
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:14:5-79
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:17:22-76
+uses-permission#android.permission.CAMERA
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:18:5-65
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:18:22-62
+uses-permission#android.permission.READ_CONTACTS
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:19:5-72
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:19:22-69
+uses-permission#android.permission.READ_CALENDAR
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:20:5-72
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:20:22-69
+uses-permission#android.permission.WRITE_CALENDAR
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:21:5-73
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:21:22-70
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:22:5-80
+MERGED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:5-80
+MERGED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:5-80
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:22:22-77
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:23:5-71
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:23:22-68
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:24:5-81
+MERGED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-81
+MERGED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-81
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:24:22-78
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:25:5-73
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:25:22-70
+application
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:28:5-46:19
+MERGED from [com.facebook.react:react-native:0.61.5] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/138ae4a965be9fc327cb68c844f5d8ff/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.61.5] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/138ae4a965be9fc327cb68c844f5d8ff/AndroidManifest.xml:11:5-20
+MERGED from [com.google.android.material:material:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/ad833239fb074ff466e902640fb53c5b/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/ad833239fb074ff466e902640fb53c5b/AndroidManifest.xml:22:5-20
+MERGED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:5-28:19
+MERGED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:5-28:19
+MERGED from [:expo-location] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-19:19
+MERGED from [:expo-location] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-19:19
+MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-16.0.0.aar/5781e1072f34ccd9f2a6a16179c82ada/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-16.0.0.aar/5781e1072f34ccd9f2a6a16179c82ada/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/9f539377599cb953bef1484d90188814/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/9f539377599cb953bef1484d90188814/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-16.0.0.aar/197eb53841568ef5721359680b00d667/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-16.0.0.aar/197eb53841568ef5721359680b00d667/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-tasks-16.0.1.aar/9456cdc4eec15e84d9324f079e1d0fec/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-tasks-16.0.1.aar/9456cdc4eec15e84d9324f079e1d0fec/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/6e86ed8940373ac26fb25999dd868a26/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/6e86ed8940373ac26fb25999dd868a26/AndroidManifest.xml:22:5-26:19
+MERGED from [com.facebook.soloader:soloader:0.6.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/db142546b236b7b4ecbe7953c4087fa6/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.6.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/db142546b236b7b4ecbe7953c4087fa6/AndroidManifest.xml:11:5-20
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/eb55a3806f62e315c29e936448bd447f/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/eb55a3806f62e315c29e936448bd447f/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/99098ecb8e2aa34d2b94bf4b9d27dc0d/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/99098ecb8e2aa34d2b94bf4b9d27dc0d/AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/71690fc94cc9f57d4ad69b670890e763/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/71690fc94cc9f57d4ad69b670890e763/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/e6368b13e7ebe590598aae3d175e0df1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/e6368b13e7ebe590598aae3d175e0df1/AndroidManifest.xml:24:5-25:19
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:18:5-28:19
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:18:5-28:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/71690fc94cc9f57d4ad69b670890e763/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:30:7-39
+	android:roundIcon
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:32:7-52
+	android:icon
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:31:7-41
+	android:allowBackup
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:33:7-34
+	android:theme
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:34:7-38
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:29:7-38
+activity#com.elevators.MainActivity
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:35:7-44:18
+	android:label
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:37:9-41
+	android:windowSoftInputMode
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:39:9-51
+	android:configChanges
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:38:9-79
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:36:9-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:40:9-43:25
+action#android.intent.action.MAIN
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:41:13-65
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:41:21-62
+category#android.intent.category.LAUNCHER
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:42:13-73
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:42:23-70
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:45:7-84
+	android:name
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml:45:17-81
+uses-sdk
+INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-screens] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-screens] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-permissions] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-permissions/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-permissions] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-permissions/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-react-native-adapter] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-react-native-adapter] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.61.5] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/138ae4a965be9fc327cb68c844f5d8ff/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.61.5] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-react-native-0.61.5.aar/138ae4a965be9fc327cb68c844f5d8ff/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.material:material:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/ad833239fb074ff466e902640fb53c5b/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/ad833239fb074ff466e902640fb53c5b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/a1d4193bf4a6cb4ffa185a56802c09ae/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0.aar/a1d4193bf4a6cb4ffa185a56802c09ae/AndroidManifest.xml:20:5-22:41
+MERGED from [:expo-app-loader-provider] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-app-loader-provider/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-app-loader-provider] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-app-loader-provider/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-constants] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-constants/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-constants] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-constants/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-error-recovery] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-error-recovery/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-error-recovery] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-error-recovery/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [:expo-font] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-font/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-font] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-font/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-keep-awake] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-keep-awake/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-keep-awake] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-keep-awake/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-linear-gradient] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-linear-gradient] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-location] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-location] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-sqlite] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-sqlite/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-sqlite] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-sqlite/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-web-browser] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-web-browser/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:expo-web-browser] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-web-browser/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-barcode-scanner-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-barcode-scanner-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-barcode-scanner-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-barcode-scanner-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-camera-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-camera-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-camera-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-camera-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-constants-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-constants-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-constants-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-constants-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-face-detector-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-face-detector-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-face-detector-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-face-detector-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-file-system-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-file-system-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-file-system-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-file-system-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-font-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-font-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-font-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-font-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-permissions-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-permissions-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-permissions-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-permissions-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-task-manager-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-task-manager-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-task-manager-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-task-manager-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-core] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/@unimodules/core/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-core] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/@unimodules/core/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-image-loader-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-image-loader-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-image-loader-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-image-loader-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-sensors-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-sensors-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:unimodules-sensors-interface] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/unimodules-sensors-interface/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [org.webkit:android-jsc:r245459] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/android-jsc-r245459.aar/462a7ce3e355951ffe19ff25fcd6ad84/AndroidManifest.xml:7:5-9:41
+MERGED from [org.webkit:android-jsc:r245459] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/android-jsc-r245459.aar/462a7ce3e355951ffe19ff25fcd6ad84/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-16.0.0.aar/5781e1072f34ccd9f2a6a16179c82ada/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-location-16.0.0.aar/5781e1072f34ccd9f2a6a16179c82ada/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/9f539377599cb953bef1484d90188814/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/9f539377599cb953bef1484d90188814/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-16.0.0.aar/197eb53841568ef5721359680b00d667/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:16.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-16.0.0.aar/197eb53841568ef5721359680b00d667/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-tasks-16.0.1.aar/9456cdc4eec15e84d9324f079e1d0fec/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-tasks-16.0.1.aar/9456cdc4eec15e84d9324f079e1d0fec/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/6e86ed8940373ac26fb25999dd868a26/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/6e86ed8940373ac26fb25999dd868a26/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/6510863e7fe0a7e57c6ce44e81624abc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/6510863e7fe0a7e57c6ce44e81624abc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/browser-1.0.0.aar/01d73012dc109f30f4d9cd49618402a7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/browser-1.0.0.aar/01d73012dc109f30f4d9cd49618402a7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0.aar/7257f00350496717ad6c97247da6ca51/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0.aar/7257f00350496717ad6c97247da6ca51/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/5ae20893123da8cdcb62ff8bd392233b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/5ae20893123da8cdcb62ff8bd392233b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/3ce712fc91736e860cf9f1d5bd7bec5c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/3ce712fc91736e860cf9f1d5bd7bec5c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/transition-1.1.0.aar/169fc9a672e2b40e8a713d566009cc49/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/transition-1.1.0.aar/169fc9a672e2b40e8a713d566009cc49/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fresco:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/fresco-2.0.0.aar/96aa35f637f5df9b7cfeb5684bc165cd/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/fresco-2.0.0.aar/96aa35f637f5df9b7cfeb5684bc165cd/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-2.0.0.aar/25efb6b7f8690c1abd80a65183621792/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-2.0.0.aar/25efb6b7f8690c1abd80a65183621792/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/drawee-2.0.0.aar/ee3f3217b5cfbbdaac6f0f7f7b65c9ea/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/drawee-2.0.0.aar/ee3f3217b5cfbbdaac6f0f7f7b65c9ea/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/nativeimagefilters-2.0.0.aar/d63c7adf344dc55691bed4899b0a67ef/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/nativeimagefilters-2.0.0.aar/d63c7adf344dc55691bed4899b0a67ef/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/imagepipeline-2.0.0.aar/5f261d3da01d6b0c7c731aee1cd47532/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/imagepipeline-2.0.0.aar/5f261d3da01d6b0c7c731aee1cd47532/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/nativeimagetranscoder-2.0.0.aar/9ea3447b008a40e3916c1a9db8ecd2b4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/nativeimagetranscoder-2.0.0.aar/9ea3447b008a40e3916c1a9db8ecd2b4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-2.0.0.aar/2690f12b54ccf9031b1df89e8a0a9a12/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-2.0.0.aar/2690f12b54ccf9031b1df89e8a0a9a12/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/db142546b236b7b4ecbe7953c4087fa6/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/soloader-0.6.0.aar/db142546b236b7b4ecbe7953c4087fa6/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/eb55a3806f62e315c29e936448bd447f/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.9.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.9.0.aar/eb55a3806f62e315c29e936448bd447f/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/99098ecb8e2aa34d2b94bf4b9d27dc0d/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.9.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.9.0.aar/99098ecb8e2aa34d2b94bf4b9d27dc0d/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/41556c0d386272bc4fe6fd5ad3da2de7/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/41556c0d386272bc4fe6fd5ad3da2de7/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/appcompat-resources-1.1.0.aar/6709ceffc1e9cdaae2cd5cc7ba6feeb7/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/appcompat-resources-1.1.0.aar/6709ceffc1e9cdaae2cd5cc7ba6feeb7/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/0ef32125fea70fda5241467707994435/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/0ef32125fea70fda5241467707994435/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/0926f5de4d8ac8a60ec4bc10ddad8380/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/0926f5de4d8ac8a60ec4bc10ddad8380/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/2e756560360da002a4176962044c3d11/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/2e756560360da002a4176962044c3d11/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/fa1135ed664e42a5c75c604ec2d3ba34/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/fa1135ed664e42a5c75c604ec2d3ba34/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/a8e9995ca236d5326c85d9c05c201ee5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/a8e9995ca236d5326c85d9c05c201ee5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/media-1.0.0.aar/6711ea3f2743f86ca941576ebc1984a8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/media-1.0.0.aar/6711ea3f2743f86ca941576ebc1984a8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/fbdd40701bb6e7bf329ece8221d7caf6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/fbdd40701bb6e7bf329ece8221d7caf6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/a1b0d1bbfbe99324058bf54fb6d5a07e/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/a1b0d1bbfbe99324058bf54fb6d5a07e/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.1.0.aar/49f8fee49a44d7a4c3add86f216c9bb1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.1.0.aar/49f8fee49a44d7a4c3add86f216c9bb1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.1.0.aar/29d8e6df7099e6fba3c568dc49abdf3a/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.1.0.aar/29d8e6df7099e6fba3c568dc49abdf3a/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/e797ac6c541ad5518d5b1113f2c183e9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/e797ac6c541ad5518d5b1113f2c183e9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/09af5d75913df2d33911badc7c6985fd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/09af5d75913df2d33911badc7c6985fd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/71690fc94cc9f57d4ad69b670890e763/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/71690fc94cc9f57d4ad69b670890e763/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/e70c9912a1ce33725a3c69cc34b6a271/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/e70c9912a1ce33725a3c69cc34b6a271/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/bc63423fe1c2cb268eda6734918b64b7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/bc63423fe1c2cb268eda6734918b64b7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/1dca7b4794450bea5e24f992d40696e7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/1dca7b4794450bea5e24f992d40696e7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/e6368b13e7ebe590598aae3d175e0df1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/e6368b13e7ebe590598aae3d175e0df1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/21b9ea4eeadbc549ec2ee6dc600452bd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/21b9ea4eeadbc549ec2ee6dc600452bd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/b26e567049c2d2fcd7ecc3c61a923200/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/b26e567049c2d2fcd7ecc3c61a923200/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/49cab2630fca462646fac2c30d2b6a4f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/49cab2630fca462646fac2c30d2b6a4f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.1.0.aar/ad0a059c11f12c7ed36963b2c317bf47/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.1.0.aar/ad0a059c11f12c7ed36963b2c317bf47/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/1dcea7bed86563de1b1bc882d681721f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/1dcea7bed86563de1b1bc882d681721f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/1901805ab771ff94afcd394661d46086/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/1901805ab771ff94afcd394661d46086/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/12b1ccc8b7da1d8fab7edfe21a6d6b8a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/12b1ccc8b7da1d8fab7edfe21a6d6b8a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/b2e0d245214c87d37f63f0fbb5714d87/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/b2e0d245214c87d37f63f0fbb5714d87/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/10f6924ec0a00e193b4e607f983891c0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/10f6924ec0a00e193b4e607f983891c0/AndroidManifest.xml:20:5-44
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:8:5-10:41
+MERGED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:8:5-10:41
+MERGED from [com.facebook.fresco:fbcore:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-fbcore-2.0.0.aar/eb5d7fd14cf2b9130046f4a473198d97/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:2.0.0] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-fbcore-2.0.0.aar/eb5d7fd14cf2b9130046f4a473198d97/AndroidManifest.xml:5:5-7:41
+INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/salamonm/Workspace/tutorials/elevators/Elevators/android/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.STORAGE
+ADDED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-66
+	android:name
+		ADDED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:22-63
+provider#expo.modules.filesystem.FileSystemFileProvider
+ADDED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:9-27:20
+	android:grantUriPermissions
+		ADDED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:13-47
+	android:authorities
+		ADDED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-74
+	android:exported
+		ADDED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:13-37
+	tools:replace
+		ADDED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:13-48
+	android:name
+		ADDED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:13-74
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-26:70
+	android:resource
+		ADDED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:26:17-67
+	android:name
+		ADDED from [:expo-file-system] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:17-67
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from [:expo-location] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-77
+	android:name
+		ADDED from [:expo-location] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:22-74
+service#expo.modules.location.services.LocationTaskService
+ADDED from [:expo-location] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-18:40
+	android:exported
+		ADDED from [:expo-location] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-37
+	android:name
+		ADDED from [:expo-location] /Users/salamonm/Workspace/tutorials/elevators/Elevators/node_modules/expo-location/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-78
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/9f539377599cb953bef1484d90188814/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/9f539377599cb953bef1484d90188814/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/9f539377599cb953bef1484d90188814/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/9f539377599cb953bef1484d90188814/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/6e86ed8940373ac26fb25999dd868a26/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/6e86ed8940373ac26fb25999dd868a26/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-16.0.1.aar/6e86ed8940373ac26fb25999dd868a26/AndroidManifest.xml:24:13-58
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:13:22-76
+uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:15:5-98
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:15:22-95
+uses-permission#com.google.android.gms.permission.ACTIVITY_RECOGNITION
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:16:5-94
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:16:22-91
+service#io.nlopez.smartlocation.activity.providers.ActivityGooglePlayServicesProvider$ActivityRecognitionService
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:19:9-21:40
+	android:exported
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:20:13-132
+service#io.nlopez.smartlocation.geofencing.providers.GeofencingGooglePlayServicesProvider$GeofencingService
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:22:9-24:40
+	android:exported
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:24:13-37
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:23:13-127
+service#io.nlopez.smartlocation.geocoding.providers.AndroidGeocodingProvider$AndroidGeocodingService
+ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [io.nlopez.smartlocation:library:3.2.11] /Users/salamonm/.gradle/caches/transforms-1/files-1.1/jetified-library-3.2.11.aar/faf8f04b0bcb7c0d7b6693401b0164c1/AndroidManifest.xml:26:13-120
