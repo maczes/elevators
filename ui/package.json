@@ -1,16 +1,19 @@
 {
   "name": "react-native-elevators",
   "description": "Simple react native based application to simulate evelevators at service",
-  "repository": "?",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maczes/elevators.git"
+  },
+  "license": "None",
   "scripts": {
-    "android": "adb reverse tcp:8081 tcp:8081 && react-native run-android ",
+    "server": "react-native start --reset-cache",
+    "android": "react-native run-android ",
     "test": "jest --config=.jestrc.json --rootDir .",
     "coverage": "jest --config=.jestrc.json --rootDir . --coverage",
-    "emulator": "~/Library/Android/sdk/emulator/emulator -list-avds | xargs ~/Library/Android/sdk/emulator/emulator -avd",
+    "emulator": "emulator -list-avds | xargs emulator -avd",
     "lint": "eslint src/**/*.js",
-    "postinstall": "jetify",
-    "cleancache": "react-native start --reset-cache"
+    "postinstall": "jetify"
   },
   "dependencies": {
     "apisauce": "^1.1.1",
