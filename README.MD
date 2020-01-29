@@ -56,6 +56,8 @@ In the main screen there is elevator grid simulating elevators state. The X char
 
 The modal window is open by pressing "REQUEST ELEVATOR" button. You can find a dropdown there where you can pick up the start floor (fromFloor) and the destination floor (toFloor). Selection that is made shows imadiatelly in the fields below.
 
+![alt text](md/Elevators-selector.png "Elevator selector")
+
 > NOTE: for some reason I could not force dropdown component to follow mouse wheel scrolling. You should click on the drop down and slide it content with the mouse button pressed.  
 
 When selection is done press GO button that you can find on the right. This will trigger simulation based on selection that was made.
@@ -67,3 +69,9 @@ If there are 3 on the 5th floor, the first with lowest id will be moved, etc.
 #### Info grid
 
 In the info grid there are reports showing what's going on in the system. When elevator moves reports are appended into dashboard (newest on the top, older goes down). Dashboard supports scrolling in case there is a lot of informaton. It refreshes automatically but also supports manual refreshing (can be done by swapping down the component).
+
+And maybe one last word about error messages. There is a very simple error message handling and you can find following picture in case of some issues:
+
+![alt text](md/Elevators-err.png "Error notification")
+
+Above is shown when BE service is down.
