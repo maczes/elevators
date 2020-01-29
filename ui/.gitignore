@@ -49,6 +49,7 @@ buck-out
 local.properties
 #/android/
 build/
+android/app/build/*
 
 # Node
 node_modules

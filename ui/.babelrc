@@ -1,9 +1,12 @@
 {
   "presets": [
-    "babel-preset-expo"
+    "module:metro-react-native-babel-preset"
   ],
   "plugins": [
-    "@babel/plugin-proposal-object-rest-spread",
-    "transform-class-properties"
+    "@babel/plugin-transform-flow-strip-types",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-transform-regenerator",
+    "@babel/plugin-transform-async-to-generator",
+    "@babel/plugin-transform-runtime"
   ]
 }
