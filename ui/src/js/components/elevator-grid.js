@@ -1,13 +1,14 @@
 /* eslint-disable no-use-before-define */
 import React from 'react';
+import { StyleSheet, View, ActivityIndicator } from 'react-native';
 import {
-  StyleSheet, View, ActivityIndicator,
-} from 'react-native';
-import {
-  Table, TableWrapper, Col, Cols, Cell,
+  Table,
+  TableWrapper,
+  Col,
+  Cols,
+  Cell,
 } from 'react-native-table-component';
 import PropTypes from 'prop-types';
-import Spinner from 'react-native-loading-spinner-overlay';
 
 export default class ElevatorGrid extends React.Component {
   constructor(props) {
@@ -15,14 +16,14 @@ export default class ElevatorGrid extends React.Component {
     props.onElevatorGridLoad();
   }
 
-  componentWillMount() {
-    setTimeout(() => {
-      console.log('indicator timeout');
-      this.props.isLoading = false;
-    }, 3000);
-  }
+  // componentWillMount() {
+  //   setTimeout(() => {
+  //     console.log('indicator timeout');
+  //     this.props.isLoading = false;
+  //   }, 3000);
+  // }
 
-  cancelable = () => true
+  cancelable = () => true;
 
   render() {
     const { isLoading, rowTitle, tableData } = this.props;
@@ -73,9 +74,7 @@ ElevatorGrid.propTypes = {
   onElevatorGridLoad: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
   rowTitle: PropTypes.arrayOf(PropTypes.string).isRequired,
-  tableData: PropTypes.arrayOf(
-    PropTypes.arrayOf(PropTypes.string),
-  ).isRequired,
+  tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
 };
 
 const singleHeadBgColor = '#c8e1ff';

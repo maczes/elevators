@@ -1,21 +1,23 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable import/prefer-default-export */
 import { DateTime } from 'luxon';
-import {
-  PUBLISH_ACTIVITY_REPORT,
-} from '../actions/info-grid-action';
+import { PUBLISH_ACTIVITY_REPORT } from '../actions/info-grid-action';
 
-export function onPublishActivityReportReducer(noticeBoard = {
-  reports: [{ datestamp: '', report: '' }],
-  refresh: false,
-}, action) {
+export function onPublishActivityReportReducer(
+  noticeBoard = {
+    reports: [{ datestamp: '', report: '' }],
+    refresh: false,
+  },
+  action,
+) {
   switch (action.type) {
     case PUBLISH_ACTIVITY_REPORT: {
       console.log('PUBLISH_ACTIVITY_REPORT detected');
-      const reportss = noticeBoard.reports;
-      reportss.unshift({ datestamp: getDate(), report: action.report });
+      const reportList = noticeBoard.reports;
+      reportList.unshift({ datestamp: getDate(), report: action.report });
       const r = toggleRefresh(noticeBoard.refresh);
-      return { reports: reportss, refresh: r };
+
+      return { reports: reportList, refresh: r };
     }
     default:
       return noticeBoard;
@@ -27,4 +29,4 @@ let getDate = () => {
   return dt.toFormat('HH:mm:ss.SSS');
 };
 
-const toggleRefresh = (refresh) => !refresh;
+const toggleRefresh = refresh => !refresh;
