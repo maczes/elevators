@@ -9,8 +9,6 @@ configure({ adapter: new Adapter() });
 const { defaults } = require('jest-config');
 
 module.exports = {
-  // ...
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx'],
   setupFilesAfterEnv: [require.resolve('expect-more-jest')],
-  // ...
 };

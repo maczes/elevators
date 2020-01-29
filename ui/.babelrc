@@ -1,15 +1,9 @@
 {
   "presets": [
-    "@babel/preset-env",
-    "@babel/preset-react"
+    "babel-preset-expo"
   ],
   "plugins": [
     "@babel/plugin-proposal-object-rest-spread",
-    [
-      "import-rename",
-      {
-        "^react-native-config$": "react-native-config-node"
-      }
-    ]
+    "transform-class-properties"
   ]
 }
