@@ -28,7 +28,7 @@
         <mockito.version>2.24.0</mockito.version>
         <lombok.version>1.18.10</lombok.version>
         <!-- Checkstyle configuration -->
-        <checkstyle.skip>true</checkstyle.skip>
+        <checkstyle.skip>false</checkstyle.skip>
         <checkstyle.suppresions.location>${project.basedir}/checkstyle-suppressions.xml</checkstyle.suppresions.location>
         <checkstyle.cfg.location>${project.basedir}/checkstyle-checks.xml</checkstyle.cfg.location>
     </properties>

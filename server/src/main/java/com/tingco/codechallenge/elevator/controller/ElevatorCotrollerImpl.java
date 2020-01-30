@@ -17,10 +17,10 @@ import lombok.extern.slf4j.Slf4j;
 public class ElevatorCotrollerImpl implements ElevatorController {
 
     @Autowired
-    ElevatorRepository elevatorRepository;
+    private ElevatorRepository elevatorRepository;
 
     @Autowired
-    ElevatorService elevatorService;
+    private ElevatorService elevatorService;
 
     /**
      * @param toFloor Target floor number where elevator will be requested to go to
@@ -43,6 +43,9 @@ public class ElevatorCotrollerImpl implements ElevatorController {
         return elevatorRepository.getElevators();
     }
 
+    /**
+     * Make a final elevator release on the activity end
+     */
     @Override
     public void releaseElevator(final int elevatorId) {
         log.debug("releasing {}", elevatorId);
@@ -55,6 +58,9 @@ public class ElevatorCotrollerImpl implements ElevatorController {
         elevatorRepository.updateElevator(elevator);
     }
 
+    /**
+     * Method moves elevator from start to desired floor
+     */
     @Override
     public void moveElevator(final int toFloor, final int elevatorId) {
         log.debug("moving {} to {}", elevatorId, toFloor);

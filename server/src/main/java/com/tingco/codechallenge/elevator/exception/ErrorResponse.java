@@ -9,9 +9,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class ErrorResponse{
+public class ErrorResponse {
 
     private String message;
     private List<String> details;
-    
+
 }

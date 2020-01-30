@@ -1,6 +1,6 @@
 package com.tingco.codechallenge.elevator.service;
 
-import java.util.Comparator;
+
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
-public class ElevatorService {
+public final class ElevatorService {
 
     private ElevatorRepository elevatorRepository;
 
@@ -48,19 +48,13 @@ public class ElevatorService {
         }).get();
     }
 
-    Comparator<Integer> comparator = new Comparator<Integer>() {
-
-        public int compare(Integer s1, Integer s2) {
-            return s1 - s2;
-        }
-    };
-
     static class EmployeePredicates {
         public static Predicate<Elevator> isNotOccupied() {
             return elevator -> !elevator.isBusy();
         }
 
-        public static List<Elevator> filterElevators(List<Elevator> elevators, Predicate<Elevator> predicate) {
+        public static List<Elevator> filterElevators(final List<Elevator> elevators,
+                final Predicate<Elevator> predicate) {
             return elevators.stream().filter(predicate).collect(Collectors.<Elevator>toList());
         }
     }
